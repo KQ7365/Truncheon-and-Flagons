@@ -81,6 +81,6 @@
   "scores": [
     { "id": 1, "teamId": 1, "score": 6, "gameDate": "08/17/23" },
     { "id": 2, "teamId": 2, "score": 2, "gameDate": "08/17/23" },
-    { "id": 3, "teamId": 3, "score": 0, "gameDate": "08/17/23" }
+    { "id": 3, "teamId": 3, "score": 1, "gameDate": "08/17/23" }
   ]
 }
