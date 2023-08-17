@@ -6,7 +6,7 @@ const render = async () => {
   const newPlayer = await AddPlayer();
   const composedHTML = `
     <article class="info">
-        <section class="info_teamB">
+        <section class="info_team">
             <h3>New Team</h3>
         </section>
         <section class="info_player">
