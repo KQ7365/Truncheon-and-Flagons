@@ -17,7 +17,7 @@ export const AddPlayer = async () => {
     }
   }
 
-  let html = `<div>
+  let html = `<div class="info_player_input">
     <input placeholder="First Name"/>
     <input placeholder="Last Name"/>
     <input placeholder="Country of Origin"/>
