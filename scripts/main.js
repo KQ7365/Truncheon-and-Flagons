@@ -1,6 +1,8 @@
+import { LeaderBoard } from "./score/LeaderBoard.js";
+
 const container = document.querySelector(".container");
 
-const render = () => {
+const render = async () => {
   const composedHTML = `
     <article class="info">
         <section class="info_team">
@@ -14,6 +16,7 @@ const render = () => {
         </section>
         <section class="info_leaderboard">
             <h3>Leaderboard</h3>
+            ${await LeaderBoard()}
         </section>
     </article>
     <article>
