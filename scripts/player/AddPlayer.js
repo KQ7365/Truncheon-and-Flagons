@@ -1,19 +1,33 @@
 export const AddPlayer = async () => {
-  const response = await fetch("");
-  const teams = await response.json();
+  const teamResponse = await fetch("http://localhost:8088/teams");
+  const teams = await teamResponse.json();
+  const playerResponse = await fetch("http://localhost:8088/players");
+  const players = await playerResponse.json();
+
+  let teamNames = [];
+  for (const team of teams) {
+    let playerCount = 0;
+    for (const player of players) {
+      if (team.id === player.teamId) {
+        playerCount++;
+      }
+    }
+    if (playerCount < 3) {
+      teamNames.push(team);
+    }
+  }
 
   let html = `<div>
-      <input placeholder="First Name"/>
-      <input placeholder="Last Name"/>
-      <input placeholder="Country of Origin"/>
-      <select class="info>
-      <option value="0">Please select a team...</option>`;
+    <input placeholder="First Name"/>
+    <input placeholder="Last Name"/>
+    <input placeholder="Country of Origin"/>
+    <select id="info">
+    <option value="0">Please select a team...</option>`;
 
-  const teamList = teams.map((team) => {
-    return `<option value="${team.id}">${team.name}</option>`;
+  const teamList = teamNames.map((teamName) => {
+    return `<option value="${teamName.id}">${teamName.name}</option>`;
   });
   html += teamList.join("");
-  html += `</select>
-    </div>`;
+  html += `</select></div>`;
   return html;
 };

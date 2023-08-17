@@ -2,8 +2,8 @@ import { AddPlayer } from "./player/AddPlayer.js";
 
 const container = document.querySelector(".container");
 
-const render = () => {
-  const newPlayer = AddPlayer();
+const render = async () => {
+  const newPlayer = await AddPlayer();
   const composedHTML = `
     <article class="info">
         <section class="info_team">
