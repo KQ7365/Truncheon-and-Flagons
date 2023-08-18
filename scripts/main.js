@@ -1,3 +1,4 @@
+import { LeaderBoard } from "./score/LeaderBoard.js";
 import { CurrentGameBoard } from "./score/CurrentGame.js";
 import { StartButton } from "./game/StartButton.js";
 import { AddPlayer } from "./player/AddPlayer.js";
@@ -22,6 +23,7 @@ const render = async () => {
         </section>
         <section class="info_leaderboard">
             <h3>Leaderboard</h3>
+            ${await LeaderBoard()}
         </section>
     </article>
     <article>
