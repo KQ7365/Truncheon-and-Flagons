@@ -1,7 +1,10 @@
 import { CurrentGameBoard } from "./score/CurrentGame.js";
+import { AddPlayer } from "./player/AddPlayer.js";
+
 const container = document.querySelector(".container");
 
-const render = () => {
+const render = async () => {
+  const newPlayer = await AddPlayer();
   const composedHTML = `
     <article class="info">
         <section class="info_team">
@@ -9,6 +12,7 @@ const render = () => {
         </section>
         <section class="info_player">
             <h3>New Player</h3>
+            ${newPlayer}
         </section>
         <section class="info_current">
             <h3>Current Game</h3>
