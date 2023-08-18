@@ -27,7 +27,11 @@ const render = async () => {
         </section>
     </article>
     <article>
-        <h1>Truncheons & Flagons</h1>
+        <img
+            class="bannerImg"
+            src="images/Truncheons & Flagons.png"
+            alt="Truncheons_Flagons_Header"
+        />
         <section class="game">
         ${startButton}
         </section>

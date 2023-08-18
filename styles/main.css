@@ -21,6 +21,17 @@ h6 {
   letter-spacing: 2px;
 }
 
+.bannerImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+main {
+  display: flex;
+}
+
 .info {
   width: 25%;
 }
