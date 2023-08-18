@@ -5,26 +5,15 @@ export const LeaderBoard = async () => {
   const players = await playerResponse.json();
   const scoreResponse = await fetch("http://localhost:8088/scores");
   const scores = await scoreResponse.json();
-
-  let leaderBoardHTML = "";
-  leaderBoardHTML += leaderBoardNames(teams);
-  leaderBoardHTML += leaderBoardPlayers(teams, players);
-  leaderBoardHTML += leaderBoardScores(teams, scores);
-  return leaderBoardHTML;
-};
-
-export const leaderBoardNames = (teams) => {
-  let htmlString = "<div class='sub-header'>Team</div>";
-  for (const team of teams) {
-    htmlString += `<div class="leaderboard-item">${team.name}</div>`;
-  }
-  return htmlString;
-};
-
-export const leaderBoardPlayers = (teams, players) => {
-  let htmlString = "<div class='sub-header'>Players</div>";
+  let htmlString =
+    "<div class='leaderboard-headers'> <h4 class='header'>Team</h4> <h4 class='header'>Players</h4> <h4 class='header'>Scores</h4></div>";
   let count = 0;
+
+  htmlString += "<div class='leaderboard-table'>";
+
   for (const team of teams) {
+    htmlString += `<div class="leaderboard-row">
+    <div class="leaderboard-item">${team.name}</div>`;
     count = 0;
     for (const player of players) {
       if (team.id === player.teamId) {
@@ -32,21 +21,14 @@ export const leaderBoardPlayers = (teams, players) => {
       }
     }
     htmlString += `<div class="leaderboard-item">${count}</div>`;
-  }
-  return htmlString;
-};
-
-export const leaderBoardScores = (teams, scores) => {
-  let htmlString = "<div class='sub-header'>Score</div>";
-  let count = 0;
-  for (const team of teams) {
     count = 0;
     for (const score of scores) {
       if (team.id === score.teamId) {
         count += score.score;
       }
     }
-    htmlString += `<div class="leaderboard-item">${count}</div>`;
+    htmlString += `<div class="leaderboard-item">${count}</div></div>`;
   }
+  htmlString += "</div>";
   return htmlString;
 };
