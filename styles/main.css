@@ -12,6 +12,13 @@ textarea {
   line-height: 1.5;
 }
 
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -29,14 +36,13 @@ h6 {
   width: 70%;
 }
 
-main {
+.container {
   display: flex;
-}
-
-.info {
-  width: 25%;
-}
-
-.game {
-  width: 75%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  width: 100%;
+  height: 100%;
 }
