@@ -18,23 +18,26 @@ export const AddPlayer = async () => {
   }
 
   let html = `
-  <form class="info_player_input">
+  <form id="playerForm">
     <fieldset>
       <input placeholder="First Name"/>
     </fieldset>
     <fieldset>
       <input placeholder="Last Name"/>
     </fieldset>
-    <input placeholder="Country of Origin"/>
-    <select id="info">
-    <option value="0">Please select a team...</option>`;
+    <fieldset>
+      <input placeholder="Country of Origin"/>
+    </fieldset>
+    <fieldset>
+      <select name="team" id="teams">
+        <option value="0">Please select a team...</option>`;
 
   const teamList = teamNames.map((teamName) => {
     return `<option value="${teamName.id}">${teamName.name}</option>`;
   });
   html += teamList.join("");
-  html += `</select>`;
-  html += `<button class="btn btn--success btn--small">Add Player to Team</button>
+  html += `</select></fieldset>`;
+  html += `<button class="btn btn--success btn--small" id="addPlayer">Add Player to Team</button>
           </form>`;
   return html;
 };

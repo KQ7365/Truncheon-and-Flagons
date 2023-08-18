@@ -11,7 +11,9 @@ const render = async () => {
   const startButton = StartButton();
   const composedHTML = `
     <section class="data">
-
+    <audio controls>
+      <source src="irish-jig-99533.mp3" />
+    </audio>
         <div class="area teamForm">
         <h3>New Team</h3>
         ${AddTeam()}
@@ -34,11 +36,14 @@ const render = async () => {
     </section>
 
     <section class="game">
-        <img
-            class="bannerImg"
-            src="images/Truncheons & Flagons.png"
-            alt="Truncheons_Flagons_Header"
-        />
+        <div class="header">
+            <img
+                class="bannerImg"
+                src="images/Truncheons & Flagons.png"
+                alt="Truncheons_Flagons_Header"
+            />
+        
+        </div>    
         <div class="gamePlay">
         ${startButton}
         </div>
