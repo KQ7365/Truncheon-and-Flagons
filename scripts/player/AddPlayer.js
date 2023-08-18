@@ -29,7 +29,7 @@ export const AddPlayer = async () => {
   });
   html += teamList.join("");
   html += `</select>`;
-  html += `<button id="player_button">Add Player to Team</button>
+  html += `<button class="btn btn--success btn--small">Add Player to Team</button>
           </div>`;
   return html;
 };

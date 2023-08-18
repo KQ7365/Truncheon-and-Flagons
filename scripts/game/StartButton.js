@@ -1,3 +1,3 @@
 export const StartButton = () => {
-  return `<button id="start_button">Start New Game</button>`;
+  return `<button class="btn btn--warning btn--lg btn--startGame">Start New Game</button>`;
 };
