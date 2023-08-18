@@ -1,3 +1,11 @@
+.leaderboard-headers {
+  display: flex;
+}
+
+.header {
+  flex-basis: 30%;
+}
+
 .leaderboard-row {
   display: flex;
 }
