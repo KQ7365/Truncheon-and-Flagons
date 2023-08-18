@@ -1,9 +1,11 @@
+import { StartButton } from "./game/StartButton.js";
 import { AddPlayer } from "./player/AddPlayer.js";
 
 const container = document.querySelector(".container");
 
 const render = async () => {
   const newPlayer = await AddPlayer();
+  const startButton = StartButton();
   const composedHTML = `
     <article class="info">
         <section class="info_team">
