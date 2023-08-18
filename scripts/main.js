@@ -1,11 +1,13 @@
 import { LeaderBoard } from "./score/LeaderBoard.js";
 import { CurrentGameBoard } from "./score/CurrentGame.js";
+import { StartButton } from "./game/StartButton.js";
 import { AddPlayer } from "./player/AddPlayer.js";
 
 const container = document.querySelector(".container");
 
 const render = async () => {
   const newPlayer = await AddPlayer();
+  const startButton = StartButton();
   const composedHTML = `
     <article class="info">
         <section class="info_team">
@@ -27,6 +29,7 @@ const render = async () => {
     <article>
         <h1>Truncheons & Flagons</h1>
         <section class="game">
+        ${startButton}
         </section>
     </article>
     `;
