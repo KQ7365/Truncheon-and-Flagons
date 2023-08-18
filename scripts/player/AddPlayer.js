@@ -17,9 +17,14 @@ export const AddPlayer = async () => {
     }
   }
 
-  let html = `<div class="info_player_input">
-    <input placeholder="First Name"/>
-    <input placeholder="Last Name"/>
+  let html = `
+  <form class="info_player_input">
+    <fieldset>
+      <input placeholder="First Name"/>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Last Name"/>
+    </fieldset>
     <input placeholder="Country of Origin"/>
     <select id="info">
     <option value="0">Please select a team...</option>`;
@@ -30,6 +35,6 @@ export const AddPlayer = async () => {
   html += teamList.join("");
   html += `</select>`;
   html += `<button class="btn btn--success btn--small">Add Player to Team</button>
-          </div>`;
+          </form>`;
   return html;
 };

@@ -2,6 +2,14 @@
 @import url("leftpanel.css");
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body,
 button,
 input,
@@ -11,6 +19,13 @@ textarea {
   font-family: "Comfortaa", Arial, sans-serif;
   font-size: 1.1rem;
   line-height: 1.5;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0.5rem 0;
+  border: 0;
 }
 
 input,
@@ -37,7 +52,7 @@ h6 {
   width: 70%;
 }
 
-.container {
+main {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -46,4 +61,15 @@ h6 {
   align-content: stretch;
   width: 100%;
   height: 100%;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  flex: 7;
+}
+
+.gamePlay {
+  position: relative;
+  flex: 10;
 }
