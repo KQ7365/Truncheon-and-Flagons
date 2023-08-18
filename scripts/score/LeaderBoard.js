@@ -25,8 +25,9 @@ export const leaderBoardPlayers = (teams, players) => {
   let htmlString = "<div class='sub-header'>Players</div>";
   let count = 0;
   for (const team of teams) {
+    count = 0;
     for (const player of players) {
-      if ((team.id = player.teamId)) {
+      if (team.id === player.teamId) {
         count++;
       }
     }
@@ -39,8 +40,9 @@ export const leaderBoardScores = (teams, scores) => {
   let htmlString = "<div class='sub-header'>Score</div>";
   let count = 0;
   for (const team of teams) {
+    count = 0;
     for (const score of scores) {
-      if ((team.id = score.teamId)) {
+      if (team.id === score.teamId) {
         count += score.score;
       }
     }
