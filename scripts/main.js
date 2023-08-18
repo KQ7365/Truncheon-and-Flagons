@@ -1,3 +1,4 @@
+import { CurrentGameBoard } from "./score/CurrentGame.js";
 const container = document.querySelector(".container");
 
 const render = () => {
@@ -11,6 +12,7 @@ const render = () => {
         </section>
         <section class="info_current">
             <h3>Current Game</h3>
+            ${CurrentGameBoard()}
         </section>
         <section class="info_leaderboard">
             <h3>Leaderboard</h3>
