@@ -1,0 +1,7 @@
+.leaderboard-row {
+  display: flex;
+}
+
+.leaderboard-item {
+  flex-basis: 30%;
+}
