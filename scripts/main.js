@@ -11,18 +11,26 @@ const render = async () => {
   const startButton = StartButton();
   const composedHTML = `
     <article class="info">
-        <section class="info_team">
+
+        <section class="data">
+
+            <div class="area teamForm">
             <h3>New Team</h3>
             ${AddTeam()}
-        </section>
-        <section class="info_player">
+            </div>
+
+            <div class="area playerForm">
             <h3>New Player</h3>
             ${newPlayer}
-        </section>
-        <section class="info_current">
+            </div>
+
+            <div class="area gameScores">
             <h3>Current Game</h3>
             ${CurrentGameBoard()}
+            </div>
+
         </section>
+
         <section class="info_leaderboard">
             <h3>Leaderboard</h3>
             ${await LeaderBoard()}
