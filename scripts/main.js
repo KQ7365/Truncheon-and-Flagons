@@ -1,4 +1,5 @@
 import { LeaderBoard } from "./score/LeaderBoard.js";
+import { CurrentGameBoard } from "./score/CurrentGame.js";
 import { AddPlayer } from "./player/AddPlayer.js";
 
 const container = document.querySelector(".container");
@@ -16,6 +17,7 @@ const render = async () => {
         </section>
         <section class="info_current">
             <h3>Current Game</h3>
+            ${CurrentGameBoard()}
         </section>
         <section class="info_leaderboard">
             <h3>Leaderboard</h3>
