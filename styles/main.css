@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+
+body,
+button,
+input,
+select,
+textarea {
+  color: #404040;
+  font-family: "Comfortaa", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Patua One", serif;
+  letter-spacing: 2px;
+}
+
+.bannerImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+main {
+  display: flex;
+}
+
+.info {
+  width: 25%;
+}
+
+.game {
+  width: 75%;
+}
