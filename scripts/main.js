@@ -31,7 +31,9 @@ const render = async () => {
 
         <div class="area leaderboard">
             <h3>Leaderboard</h3>
+            <div class="teams">
             ${await LeaderBoard()}
+            </div>
         </div>
     </section>
 

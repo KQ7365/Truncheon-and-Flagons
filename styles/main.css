@@ -62,10 +62,6 @@ textarea {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-option {
-  padding: 10px 2px;
-}
-
 h1,
 h2,
 h3,
