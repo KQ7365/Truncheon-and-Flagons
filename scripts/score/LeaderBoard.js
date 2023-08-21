@@ -14,26 +14,26 @@ export const LeaderBoard = async () => {
   let count = 0;
 
   for (const team of teams) {
-    if (team.name === "") {
-      //*added conditional where if our database has an empty teamId with no actual "team name", do not display it.
-    } else {
-      htmlString += `<div class="team team--${team.id}">
+    // if (team.name === "") {
+    //   //*added conditional where if our database has an empty teamId with no actual "team name", do not display it.
+    // } else {
+    htmlString += `<div class="team team--${team.id}">
     <div class="team_column team_name">${team.name}</div>`;
-      count = 0;
-      for (const player of players) {
-        if (team.id === player.teamId) {
-          count++;
-        }
+    count = 0;
+    for (const player of players) {
+      if (team.id === player.teamId) {
+        count++;
       }
-      htmlString += `<div class="team_column team_playerCount">${count}</div>`;
-      count = 0;
-      for (const score of scores) {
-        if (team.id === score.teamId) {
-          count += score.score;
-        }
-      }
-      htmlString += `<div class="team_column team_score">${count}</div></div>`;
     }
+    htmlString += `<div class="team_column team_playerCount">${count}</div>`;
+    count = 0;
+    for (const score of scores) {
+      if (team.id === score.teamId) {
+        count += score.score;
+      }
+    }
+    htmlString += `<div class="team_column team_score">${count}</div></div>`;
   }
+  // }
   return htmlString;
 };
