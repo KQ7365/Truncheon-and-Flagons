@@ -4,19 +4,6 @@ export const AddPlayer = async () => {
   const playerResponse = await fetch("http://localhost:8088/players");
   const players = await playerResponse.json();
 
-  let teamNames = [];
-  for (const team of teams) {
-    let playerCount = 0;
-    for (const player of players) {
-      if (team.id === player.teamId) {
-        playerCount++;
-      }
-    }
-    if (playerCount < 3) {
-      teamNames.push(team);
-    }
-  }
-
   let html = `
   <form id="playerForm">
     <fieldset>
@@ -32,10 +19,19 @@ export const AddPlayer = async () => {
       <select name="team" id="teams">
         <option value="0">Please select a team...</option>`;
 
-  const teamList = teamNames.map((teamName) => {
-    return `<option value="${teamName.id}">${teamName.name}</option>`;
-  });
-  html += teamList.join("");
+  teams
+    .map((team) => {
+      let playerCount = 0;
+      players.find((player) => {
+        if (team.id === player.teamId) {
+          playerCount++;
+        }
+      });
+      if (playerCount < 3) {
+        html += `<option value="${team.id}">${team.name}</option>`;
+      }
+    })
+    .join("");
   html += `</select></fieldset>`;
   html += `<button class="btn btn--success btn--small" id="addPlayer">Add Player to Team</button>
           </form>`;
