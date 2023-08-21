@@ -1,8 +1,10 @@
 export const AddTeam = () => {
-  let addTeamHTML = `<div id="addteam_container">`;
-  addTeamHTML += `<input placeholder="Team Name"/>`;
-  addTeamHTML += `<button class="btn btn--success btn--small">Create Team</button>`;
-  addTeamHTML += `</div>`;
+  let addTeamHTML = `<form id="teamForm">`;
+  addTeamHTML += `<fieldset>
+                    <input placeholder="Team Name"/>
+                  </fieldset>`;
+  addTeamHTML += `<button class="btn btn--success btn--small" id="addTeam">Create Team</button>`;
+  addTeamHTML += `</form>`;
 
   return addTeamHTML;
 };
