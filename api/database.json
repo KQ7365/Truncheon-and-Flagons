@@ -1,9 +1,37 @@
 {
   "teams": [
-    { "id": 1, "name": "The Query Kings", "dateCreated": "01/01/21" },
-    { "id": 2, "name": "The Data Dudes", "dateCreated": "01/02/22" },
-    { "id": 3, "name": "The Byte Busters", "dateCreated": "02/05/20" },
-    { "id": 4, "name": "The Syntax Champions", "dateCreated": "11/01/20" }
+    {
+      "id": 1,
+      "name": "The Query Kings",
+      "dateCreated": "01/01/21"
+    },
+    {
+      "id": 2,
+      "name": "The Data Dudes",
+      "dateCreated": "01/02/22"
+    },
+    {
+      "id": 3,
+      "name": "The Byte Busters",
+      "dateCreated": "02/05/20"
+    },
+    {
+      "id": 4,
+      "name": "The Syntax Champions",
+      "dateCreated": "11/01/20"
+    },
+    {
+      "name": "",
+      "id": 5
+    },
+    {
+      "name": "Test Team",
+      "id": 6
+    },
+    {
+      "name": "",
+      "id": 7
+    }
   ],
   "players": [
     {
@@ -96,8 +124,23 @@
     }
   ],
   "scores": [
-    { "id": 1, "teamId": 1, "score": 6, "gameDate": "08/17/23" },
-    { "id": 2, "teamId": 2, "score": 2, "gameDate": "08/17/23" },
-    { "id": 3, "teamId": 3, "score": 1, "gameDate": "08/17/23" }
+    {
+      "id": 1,
+      "teamId": 1,
+      "score": 6,
+      "gameDate": "08/17/23"
+    },
+    {
+      "id": 2,
+      "teamId": 2,
+      "score": 2,
+      "gameDate": "08/17/23"
+    },
+    {
+      "id": 3,
+      "teamId": 3,
+      "score": 1,
+      "gameDate": "08/17/23"
+    }
   ]
 }
