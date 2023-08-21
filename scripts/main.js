@@ -3,12 +3,14 @@ import { CurrentGameBoard } from "./score/CurrentGame.js";
 import { StartButton } from "./game/StartButton.js";
 import { AddPlayer } from "./player/AddPlayer.js";
 import { AddTeam } from "./team/AddTeam.js";
+import { addNewTeam } from "./team/AddTeam.js";
 
 const container = document.querySelector(".container");
 
 const render = async () => {
   const newPlayer = await AddPlayer();
   const startButton = StartButton();
+  const addTeam = await AddTeam();
   const composedHTML = `
     <section class="data">
     <audio controls>
@@ -18,6 +20,14 @@ const render = async () => {
         <h3>New Team</h3>
         ${AddTeam()}
         </div>
+    <article class="data">
+
+      
+
+            <div class="area teamForm">
+            <h3>New Team</h3>
+            ${addTeam}
+            </div>
 
         <div class="area playerForm">
         <h3>New Player</h3>
@@ -53,6 +63,9 @@ const render = async () => {
     `;
 
   container.innerHTML = composedHTML;
+
+  const createTeamButton = document.querySelector("#createTeamButton"); //*this button is in AddTeam.js
+  createTeamButton.addEventListener("click", addNewTeam); //*when button is clicked it runs the addNewTeam() function.
 };
 
 render();
