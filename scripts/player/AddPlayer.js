@@ -1,4 +1,11 @@
-import { playerState } from "./PlayerState.js";
+import {
+  SaveOrder,
+  setDateJoined,
+  setFirstName,
+  setLastName,
+  setOrigin,
+  setTeamId,
+} from "./PlayerState.js";
 import { getDate } from "../date.js";
 
 export const getTeams = async () => {
@@ -14,21 +21,14 @@ export const getPlayers = async () => {
 };
 
 const handleButtonClick = (clickEvent) => {
-  const player = playerState();
-  debugger;
   if (clickEvent.target.id === "addPlayer") {
-    const firstNameInput = document.getElementById("firstName").value;
-    const lastNameInput = document.getElementById("lastName").value;
-    const originInput = document.getElementById("origin").value;
-    const teamChoice = parseInt(document.getElementById("teams").value);
-    player.firstName = firstNameInput;
-    player.lastName = lastNameInput;
-    player.origin = originInput;
-    player.dateJoined = getDate();
-    player.teamId = teamChoice;
-    player.console.log(player);
-    // const parentTag = document.querySelector("#playerForm");
-    // parentTag.innerHTML = AddPlayer();
+    setFirstName(document.getElementById("firstName").value);
+    setLastName(document.getElementById("lastName").value);
+    setOrigin(document.getElementById("origin").value);
+    setDateJoined(getDate());
+    setTeamId(parseInt(document.getElementById("teams").value));
+
+    SaveOrder();
   }
 };
 

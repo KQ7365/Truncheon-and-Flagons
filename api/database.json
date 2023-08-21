@@ -19,6 +19,10 @@
       "id": 4,
       "name": "The Syntax Champions",
       "dateCreated": "11/01/20"
+    },
+    {
+      "name": "Practice",
+      "id": 5
     }
   ],
   "players": [
@@ -109,6 +113,22 @@
       "origin": "Romania",
       "dateJoined": "08/10/03",
       "teamId": 4
+    },
+    {
+      "firstName": "Tricia",
+      "lastName": "Swift",
+      "origin": "United Kingdom",
+      "dateJoined": "7/21/23",
+      "teamId": 4,
+      "id": 12
+    },
+    {
+      "firstName": "Aedin",
+      "lastName": "Pittman",
+      "origin": "USA",
+      "dateJoined": "7/21/23",
+      "teamId": 5,
+      "id": 13
     }
   ],
   "scores": [
