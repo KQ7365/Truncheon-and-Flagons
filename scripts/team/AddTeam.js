@@ -26,7 +26,7 @@ export const addNewTeam = async () => {
 };
 
 const addTeamToLeaderBoard = async () => {
-  const leaderBoardHTML = document.getElementById("teamNameElement"); //*targeting the leader board html div id
+  const leaderBoardHTML = document.getElementById("teams"); //*targeting the leader board html div id
 
   const response = await fetch("http://localhost:8088/teams");
   const returnedLeaderBoardObject = await response.json();

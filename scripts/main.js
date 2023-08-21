@@ -16,10 +16,7 @@ const render = async () => {
     <audio controls>
       <source src="irish-jig-99533.mp3" />
     </audio>
-        <div class="area teamForm">
-        <h3>New Team</h3>
-        ${AddTeam()}
-        </div>
+        
     <article class="data">
 
       
