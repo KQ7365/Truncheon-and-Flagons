@@ -1,13 +1,37 @@
+.area {
+  border: 1px dotted darkslategray;
+  padding: 0.3rem 2rem;
+}
+
 .data {
   flex: 5;
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: stretch;
   font-size: 1.1rem;
   width: 100%;
   height: 100%;
 }
 
-.area {
-  border: 1px dotted black;
-  padding: 0.3rem 2rem;
+.teamForm {
+  flex: 1.5;
+  min-height: 5em;
+}
+
+.playerForm {
+  flex: 2.2;
+  min-height: 5em;
+}
+
+.gameScores {
+  flex: 1.5;
+  min-height: 5em;
+}
+
+.leaderboard {
+  flex: 3;
+  overflow-y: scroll;
+  min-height: 5em;
 }

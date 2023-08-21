@@ -12,6 +12,14 @@ const render = async () => {
   const startButton = StartButton();
   const addTeam = await AddTeam();
   const composedHTML = `
+    <section class="data">
+    <audio controls>
+      <source src="irish-jig-99533.mp3" />
+    </audio>
+        <div class="area teamForm">
+        <h3>New Team</h3>
+        ${AddTeam()}
+        </div>
     <article class="data">
 
       
@@ -21,34 +29,37 @@ const render = async () => {
             ${addTeam}
             </div>
 
-            <div class="area playerForm">
-            <h3>New Player</h3>
-            ${newPlayer}
-            </div>
+        <div class="area playerForm">
+        <h3>New Player</h3>
+        ${newPlayer}
+        </div>
 
-            <div class="area gameScores">
-            <h3>Current Game</h3>
-            ${CurrentGameBoard()}
-            </div>
-
-     
+        <div class="area gameScores">
+        <h3>Current Game</h3>
+        ${CurrentGameBoard()}
+        </div>
 
         <div class="area leaderboard">
             <h3>Leaderboard</h3>
-            <div class='leaderboard-headers'> <h4 class='header'>Team</h4> <h4 class='header'>Players</h4> <h4 class='header'>Scores</h4></div>
+            <div class="teams">
             ${await LeaderBoard()}
+            </div>
         </div>
-    </article>
-    <article>
-        <img
-            class="bannerImg"
-            src="images/Truncheons & Flagons.png"
-            alt="Truncheons_Flagons_Header"
-        />
-        <section class="game">
+    </section>
+
+    <section class="game">
+        <div class="header">
+            <img
+                class="bannerImg"
+                src="images/Truncheons & Flagons.png"
+                alt="Truncheons_Flagons_Header"
+            />
+        
+        </div>    
+        <div class="gamePlay">
         ${startButton}
-        </section>
-    </article>
+        </div>
+    </section>
     `;
 
   container.innerHTML = composedHTML;

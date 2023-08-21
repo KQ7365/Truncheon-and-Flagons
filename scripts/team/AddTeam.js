@@ -34,10 +34,12 @@ const addTeamToLeaderBoard = async () => {
 };
 
 export const AddTeam = async () => {
-  let addTeamHTML = `<div id="addteam_container">`;
-  addTeamHTML += `<input id="teamnameinput" placeholder="Team Name"/>`;
-  addTeamHTML += `<button id="createTeamButton" class="btn btn--success btn--small">Create Team</button>`;
-  addTeamHTML += `</div>`;
+  let addTeamHTML = `<form id="teamForm">`;
+  addTeamHTML += `<fieldset>
+                    <input id="teamnameinput" placeholder="Team Name"/>
+                  </fieldset>`;
+  addTeamHTML += `<button id="createTeamButton" class="btn btn--success btn--small" id="addTeam">Create Team</button>`;
+  addTeamHTML += `</form>`;
 
   return addTeamHTML;
 };
