@@ -11,16 +11,25 @@ const container = document.querySelector(".container");
 const render = async () => {
   const startButton = StartButton();
   const addTeam = await AddTeam();
+  const addPlayer = await AddPlayer();
   const leaderboard = await LeaderBoard();
   const composedHTML = `
     <section class="data">
 
         <div class="area teamForm">
           <h3>New Team</h3>
+          <div class="teamField">
           ${addTeam}
+          </div>
         </div>
 
-        <div class="playerForm area"></div>
+        <div class="area playerForm">
+          <h3>New Player</h3>
+          <div class="playerFields">
+          ${addPlayer}
+          <div class="error_message"></div>
+          </div>
+        </div>
 
         <div class="area gameScores">
           <h3>Current Game</h3>
@@ -59,6 +68,13 @@ const render = async () => {
   const createTeamButton = document.querySelector("#createTeamButton"); //*this button is in AddTeam.js
   createTeamButton.addEventListener("click", addNewTeam); //*when button is clicked it runs the addNewTeam() function.
 
+  document.addEventListener("newPlayer", async (event) => {
+    const playerArea = document.querySelector(".playerFields");
+    playerArea.innerHTML = await AddPlayer();
+    const leaderboardArea = document.querySelector(".teams");
+    leaderboardArea.innerHTML = await LeaderBoard();
+  });
+
   const startGameButton = document.querySelector(".btn--startGame");
   startGameButton.addEventListener("click", async () => {
     const gameArea = document.querySelector(".gamePlay");
@@ -67,21 +83,3 @@ const render = async () => {
 };
 
 render();
-
-const playerForm = async () => {
-  const newPlayer = await AddPlayer();
-  const playerHTML = `
-    <h3>New Player</h3>
-    ${newPlayer}
-    <div class="error_message"></div>
-  `;
-  const addPlayer = document.querySelector(".playerForm");
-  addPlayer.innerHTML = playerHTML;
-};
-
-playerForm();
-
-document.addEventListener("newPlayer", (event) => {
-  console.log("Player state has changed.");
-  playerForm();
-});
