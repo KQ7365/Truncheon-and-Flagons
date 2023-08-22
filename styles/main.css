@@ -34,6 +34,11 @@ textarea {
   overflow: hidden;
 }
 
+input:hover,
+select:hover {
+  border: 2px solid black;
+}
+
 fieldset {
   min-width: 0;
   padding: 0;

@@ -14,9 +14,6 @@ export const LeaderBoard = async () => {
   let count = 0;
 
   for (const team of teams) {
-    // if (team.name === "") {
-    //   //*added conditional where if our database has an empty teamId with no actual "team name", do not display it.
-    // } else {
     htmlString += `<div class="team team--${team.id}">
     <div class="team_column team_name">${team.name}</div>`;
     count = 0;
@@ -34,6 +31,6 @@ export const LeaderBoard = async () => {
     }
     htmlString += `<div class="team_column team_score">${count}</div></div>`;
   }
-  // }
+
   return htmlString;
 };
