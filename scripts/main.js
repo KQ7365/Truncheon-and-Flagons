@@ -3,6 +3,8 @@ import { CurrentGameBoard } from "./score/CurrentGame.js";
 import { StartButton } from "./game/StartButton.js";
 import { AddPlayer } from "./player/AddPlayer.js";
 import { AddTeam } from "./team/AddTeam.js";
+import { addNewTeam } from "./team/AddTeam.js";
+import { SelectTeam } from "./game/SelectTeam.js";
 
 const container = document.querySelector(".container");
 
@@ -53,6 +55,15 @@ const render = async () => {
     `;
 
   container.innerHTML = composedHTML;
+
+  const createTeamButton = document.querySelector("#createTeamButton"); //*this button is in AddTeam.js
+  createTeamButton.addEventListener("click", addNewTeam); //*when button is clicked it runs the addNewTeam() function.
+
+  const startGameButton = document.querySelector(".btn--startGame");
+  startGameButton.addEventListener("click", async () => {
+    const gameArea = document.querySelector(".gamePlay");
+    gameArea.innerHTML = await SelectTeam();
+  });
 };
 
 render();
