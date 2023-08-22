@@ -1,5 +1,5 @@
 import {
-  SaveOrder,
+  SavePlayer,
   setDateJoined,
   setFirstName,
   setLastName,
@@ -8,34 +8,51 @@ import {
 } from "./PlayerState.js";
 import { getDate } from "../date.js";
 
-export const getTeams = async () => {
-  const teamResponse = await fetch("http://localhost:8088/teams");
-  const teams = await teamResponse.json();
-  return teams;
+const handleFirstName = (changeEvent) => {
+  if (changeEvent.target.id === "firstName") {
+    const firstNameInput = changeEvent.target.value;
+    setFirstName(firstNameInput);
+  }
 };
 
-export const getPlayers = async () => {
-  const playerResponse = await fetch("http://localhost:8088/players");
-  const players = await playerResponse.json();
-  return players;
+const handleLastName = (changeEvent) => {
+  if (changeEvent.target.id === "lastName") {
+    const LastNameInput = changeEvent.target.value;
+    setLastName(LastNameInput);
+  }
+};
+
+const handleOrigin = (changeEvent) => {
+  if (changeEvent.target.id === "origin") {
+    const originInput = changeEvent.target.value;
+    setOrigin(originInput);
+  }
+};
+
+const handleTeamId = (changeEvent) => {
+  if (changeEvent.target.id === "teams") {
+    const teamChoice = changeEvent.target.value;
+    setTeamId(teamChoice);
+  }
 };
 
 const handleButtonClick = (clickEvent) => {
   if (clickEvent.target.id === "addPlayer") {
-    setFirstName(document.getElementById("firstName").value);
-    setLastName(document.getElementById("lastName").value);
-    setOrigin(document.getElementById("origin").value);
     setDateJoined(getDate());
-    setTeamId(parseInt(document.getElementById("teams").value));
-
-    SaveOrder();
+    SavePlayer();
   }
 };
 
 export const AddPlayer = async () => {
-  const teams = await getTeams();
-  const players = await getPlayers();
+  const teamResponse = await fetch("http://localhost:8088/teams");
+  const teams = await teamResponse.json();
+  const playerResponse = await fetch("http://localhost:8088/players");
+  const players = await playerResponse.json();
 
+  document.addEventListener("change", handleFirstName);
+  document.addEventListener("change", handleLastName);
+  document.addEventListener("change", handleOrigin);
+  document.addEventListener("change", handleTeamId);
   document.addEventListener("click", handleButtonClick);
 
   let html = `

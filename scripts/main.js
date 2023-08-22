@@ -28,10 +28,8 @@ const render = async () => {
 
         <div class="area playerForm">
         <h3>New Player</h3>
-        <div class="player_replacement">
         ${newPlayer}
-        </div>
-        <div class="player_message error"></div>
+        <div class="error_message"></div>
         </div>
 
         <div class="area gameScores">
@@ -69,10 +67,3 @@ const render = async () => {
 };
 
 render();
-
-// document.addEventListener("addNewPlayer", (event) => {
-//   const updatedPlayer = document.querySelector(".player_replacement");
-//   updatedPlayer.innerHTML = AddPlayer;
-//   const updatedLeaderBoard = document.querySelector(".teams");
-//   updatedLeaderBoard.innerHTML = AddPlayer;
-// });

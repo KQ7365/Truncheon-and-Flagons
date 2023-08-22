@@ -31,7 +31,7 @@ export const setTeamId = (input) => {
   console.log(player);
 };
 
-export const SaveOrder = async () => {
+export const SavePlayer = async () => {
   if (player.firstName && player.lastName && player.origin && player.teamId) {
     const postOptions = {
       method: "POST",
@@ -51,10 +51,11 @@ export const SaveOrder = async () => {
       teamId: 0,
     };
 
-    // const stateChanged = new CustomEvent("newOrderPlaced");
-    // document.dispatchEvent(stateChanged);
+    const stateChanged = new CustomEvent("newPlayer");
+    document.dispatchEvent(stateChanged);
   }
-  const errorMessage = `<div class="message">Please select all 3 items</div>`;
-  const parentTag = document.querySelector(".player_message");
+  const errorMessage = `<div class="message">Please fill out all fields</div>`;
+  const parentTag = document.querySelector(".error_message");
   parentTag.innerHTML = errorMessage;
+  debugger;
 };
