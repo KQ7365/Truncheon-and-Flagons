@@ -109,6 +109,14 @@
       "origin": "Romania",
       "dateJoined": "08/10/03",
       "teamId": 4
+    },
+    {
+      "firstName": "Tricia",
+      "lastName": "Swift",
+      "origin": "United Kingdom",
+      "dateJoined": "7/22/23",
+      "teamId": 4,
+      "id": 12
     }
   ],
   "scores": [

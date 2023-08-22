@@ -1,3 +1,55 @@
+import {
+  SavePlayer,
+  setDateJoined,
+  setFirstName,
+  setLastName,
+  setOrigin,
+  setTeamId,
+} from "./PlayerState.js";
+import { getDate } from "../date.js";
+
+const handleFirstName = (changeEvent) => {
+  if (changeEvent.target.id === "firstName") {
+    const firstNameInput = changeEvent.target.value;
+    setFirstName(firstNameInput);
+  }
+};
+
+const handleLastName = (changeEvent) => {
+  if (changeEvent.target.id === "lastName") {
+    const LastNameInput = changeEvent.target.value;
+    setLastName(LastNameInput);
+  }
+};
+
+const handleOrigin = (changeEvent) => {
+  if (changeEvent.target.id === "origin") {
+    const originInput = changeEvent.target.value;
+    setOrigin(originInput);
+  }
+};
+
+const handleTeamId = (changeEvent) => {
+  if (changeEvent.target.id === "teams") {
+    const teamChoice = parseInt(changeEvent.target.value);
+    setTeamId(teamChoice);
+  }
+};
+
+const handleButtonClick = (clickEvent) => {
+  if (clickEvent.target.id === "addPlayer") {
+    clickEvent.preventDefault();
+    setDateJoined(getDate());
+    SavePlayer();
+  }
+};
+
+document.addEventListener("change", handleFirstName);
+document.addEventListener("change", handleLastName);
+document.addEventListener("change", handleOrigin);
+document.addEventListener("change", handleTeamId);
+document.addEventListener("click", handleButtonClick);
+
 export const AddPlayer = async () => {
   const teamResponse = await fetch("http://localhost:8088/teams");
   const teams = await teamResponse.json();
@@ -7,13 +59,13 @@ export const AddPlayer = async () => {
   let html = `
   <form id="playerForm">
     <fieldset>
-      <input placeholder="First Name"/>
+      <input id="firstName" placeholder="First Name"/>
     </fieldset>
     <fieldset>
-      <input placeholder="Last Name"/>
+      <input id="lastName" placeholder="Last Name"/>
     </fieldset>
     <fieldset>
-      <input placeholder="Country of Origin"/>
+      <input id="origin" placeholder="Country of Origin"/>
     </fieldset>
     <fieldset>
       <select name="team" id="teams">
