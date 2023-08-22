@@ -61,8 +61,10 @@ const render = async () => {
 
   container.innerHTML = composedHTML;
 
-  const createTeamButton = document.querySelector("#createTeamButton"); //*this button is in AddTeam.js
-  createTeamButton.addEventListener("click", addNewTeam); //*when button is clicked it runs the addNewTeam() function.
+  document.addEventListener("savingTeamHTML", async (event) => {
+    const leaderBoardHTMLArea = document.querySelector(".teams");
+    leaderBoardHTMLArea.innerHTML = await LeaderBoard();
+  });
 };
-
+// document.addEventListener("savingTeamHTML", render);
 render();
