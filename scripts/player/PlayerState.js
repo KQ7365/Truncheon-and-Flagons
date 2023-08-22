@@ -53,9 +53,9 @@ export const SavePlayer = async () => {
 
     const stateChanged = new CustomEvent("newPlayer");
     document.dispatchEvent(stateChanged);
+  } else {
+    const errorMessage = `<div class="message">Please fill out all fields</div>`;
+    const parentTag = document.querySelector(".error_message");
+    parentTag.innerHTML = errorMessage;
   }
-  const errorMessage = `<div class="message">Please fill out all fields</div>`;
-  const parentTag = document.querySelector(".error_message");
-  parentTag.innerHTML = errorMessage;
-  debugger;
 };

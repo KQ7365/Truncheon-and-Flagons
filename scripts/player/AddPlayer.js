@@ -31,29 +31,30 @@ const handleOrigin = (changeEvent) => {
 
 const handleTeamId = (changeEvent) => {
   if (changeEvent.target.id === "teams") {
-    const teamChoice = changeEvent.target.value;
+    const teamChoice = parseInt(changeEvent.target.value);
     setTeamId(teamChoice);
   }
 };
 
 const handleButtonClick = (clickEvent) => {
   if (clickEvent.target.id === "addPlayer") {
+    clickEvent.preventDefault();
     setDateJoined(getDate());
     SavePlayer();
   }
 };
+
+document.addEventListener("change", handleFirstName);
+document.addEventListener("change", handleLastName);
+document.addEventListener("change", handleOrigin);
+document.addEventListener("change", handleTeamId);
+document.addEventListener("click", handleButtonClick);
 
 export const AddPlayer = async () => {
   const teamResponse = await fetch("http://localhost:8088/teams");
   const teams = await teamResponse.json();
   const playerResponse = await fetch("http://localhost:8088/players");
   const players = await playerResponse.json();
-
-  document.addEventListener("change", handleFirstName);
-  document.addEventListener("change", handleLastName);
-  document.addEventListener("change", handleOrigin);
-  document.addEventListener("change", handleTeamId);
-  document.addEventListener("click", handleButtonClick);
 
   let html = `
   <form id="playerForm">

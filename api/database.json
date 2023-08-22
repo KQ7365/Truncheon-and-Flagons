@@ -113,9 +113,9 @@
     {
       "firstName": "Tricia",
       "lastName": "Swift",
-      "origin": "USA",
-      "dateJoined": "7/21/23",
-      "teamId": "4",
+      "origin": "United Kingdom",
+      "dateJoined": "7/22/23",
+      "teamId": 4,
       "id": 12
     }
   ],

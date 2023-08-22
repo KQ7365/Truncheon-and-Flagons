@@ -35,3 +35,10 @@
   overflow-y: scroll;
   min-height: 5em;
 }
+
+.message {
+  color: red;
+  font-weight: bold;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
