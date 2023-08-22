@@ -4,44 +4,45 @@ import { StartButton } from "./game/StartButton.js";
 import { AddPlayer } from "./player/AddPlayer.js";
 import { AddTeam } from "./team/AddTeam.js";
 import { addNewTeam } from "./team/AddTeam.js";
+import { SelectTeam } from "./game/SelectTeam.js";
 
 const container = document.querySelector(".container");
 
 const render = async () => {
-  const newPlayer = await AddPlayer();
   const startButton = StartButton();
   const addTeam = await AddTeam();
+  const addPlayer = await AddPlayer();
+  const leaderboard = await LeaderBoard();
   const composedHTML = `
     <section class="data">
-    <audio controls>
-      <source src="irish-jig-99533.mp3" />
-    </audio>
-        
-    <article class="data">
 
-      
-
-            <div class="area teamForm">
-            <h3>New Team</h3>
-            ${addTeam}
-            </div>
+        <div class="area teamForm">
+          <h3>New Team</h3>
+          <div class="teamField">
+          ${addTeam}
+          </div>
+        </div>
 
         <div class="area playerForm">
-        <h3>New Player</h3>
-        ${newPlayer}
+          <h3>New Player</h3>
+          <div class="playerFields">
+          ${addPlayer}
+          <div class="error_message"></div>
+          </div>
         </div>
 
         <div class="area gameScores">
-        <h3>Current Game</h3>
-        ${CurrentGameBoard()}
+          <h3>Current Game</h3>
+          ${CurrentGameBoard()}
         </div>
 
         <div class="area leaderboard">
             <h3>Leaderboard</h3>
             <div class="teams">
-            ${await LeaderBoard()}
+              ${leaderboard}
             </div>
         </div>
+
     </section>
 
     <section class="game">
@@ -51,10 +52,13 @@ const render = async () => {
                 src="images/Truncheons & Flagons.png"
                 alt="Truncheons_Flagons_Header"
             />
-        
-        </div>    
+        </div>   
+
         <div class="gamePlay">
-        ${startButton}
+          <audio controls>
+            <source src="irish-jig-99533.mp3" />
+          </audio>
+          ${startButton}
         </div>
     </section>
     `;
@@ -64,6 +68,19 @@ const render = async () => {
   document.addEventListener("savingTeamHTML", async (event) => {
     const leaderBoardHTMLArea = document.querySelector(".teams");
     leaderBoardHTMLArea.innerHTML = await LeaderBoard();
+  });
+
+  document.addEventListener("newPlayer", async (event) => {
+    const playerArea = document.querySelector(".playerFields");
+    playerArea.innerHTML = await AddPlayer();
+    const leaderboardArea = document.querySelector(".teams");
+    leaderboardArea.innerHTML = await LeaderBoard();
+  });
+
+  const startGameButton = document.querySelector(".btn--startGame");
+  startGameButton.addEventListener("click", async () => {
+    const gameArea = document.querySelector(".gamePlay");
+    gameArea.innerHTML = await SelectTeam();
   });
 };
 // document.addEventListener("savingTeamHTML", render);
