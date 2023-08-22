@@ -21,14 +21,16 @@ export const addNewTeam = async () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    });
-    teamNameInput.value = ""; // Reset the input field after clicking the button
+    }).then((response) => {
+      response.json();
+      // addTeamToLeaderBoard(); // Invoke the addTeamToLeaderBoard function after updating the HTML element
+      teamNameInput.value = ""; // Reset the input field after clicking the button
 
-    const customEvent = new CustomEvent("savingTeamHTML");
-    document.dispatchEvent(customEvent);
+      const customEvent = new CustomEvent("savingTeamHTML");
+      document.dispatchEvent(customEvent);
+    });
   }
 };
-
 export const AddTeam = async () => {
   let addTeamHTML = `<form id="teamForm">`;
   addTeamHTML += `<fieldset>
@@ -46,3 +48,11 @@ const handleTheClick = (clickEvent) => {
   }
 };
 document.addEventListener("click", handleTheClick);
+
+// const addTeamToLeaderBoard = async () => {
+//   const leaderBoardHTML = document.getElementById("teams"); //*targeting the leader board html div id
+
+//   const response = await fetch("http://localhost:8088/teams");
+//   const returnedLeaderBoardObject = await response.json();
+//   leaderBoardHTML.innerHTML = await LeaderBoard(returnedLeaderBoardObject); //*invoking the LeaderBoard() function with our returned object as the argument.
+// }
