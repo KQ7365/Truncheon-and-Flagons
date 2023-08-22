@@ -23,7 +23,7 @@ export const addNewTeam = async () => {
       body: JSON.stringify(data),
     }).then((response) => {
       response.json();
-      // addTeamToLeaderBoard(); // Invoke the addTeamToLeaderBoard function after updating the HTML element
+
       teamNameInput.value = ""; // Reset the input field after clicking the button
 
       const customEvent = new CustomEvent("savingTeamHTML");
@@ -48,11 +48,3 @@ const handleTheClick = (clickEvent) => {
   }
 };
 document.addEventListener("click", handleTheClick);
-
-// const addTeamToLeaderBoard = async () => {
-//   const leaderBoardHTML = document.getElementById("teams"); //*targeting the leader board html div id
-
-//   const response = await fetch("http://localhost:8088/teams");
-//   const returnedLeaderBoardObject = await response.json();
-//   leaderBoardHTML.innerHTML = await LeaderBoard(returnedLeaderBoardObject); //*invoking the LeaderBoard() function with our returned object as the argument.
-// }
