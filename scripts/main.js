@@ -37,7 +37,7 @@ const render = async () => {
 
         <div class="area gameScores">
           <h3>Current Game</h3>
-          <div class="teams">
+          <div class="teams teams_currentGame">
             <div class="rows">
             ${CurrentGameBoard()}
             </div>
@@ -48,7 +48,7 @@ const render = async () => {
 
         <div class="area leaderboard">
             <h3>Leaderboard</h3>
-            <div class="teams">
+            <div class="teams teams_leaderboard">
               ${leaderboard}
             </div>
         </div>
@@ -76,14 +76,16 @@ const render = async () => {
   container.innerHTML = composedHTML;
 
   document.addEventListener("savingTeamHTML", async (event) => {
-    const leaderBoardHTMLArea = document.querySelector(".teams");
+    const playerHTMLArea = document.querySelector(".playerFields");
+    playerHTMLArea.innerHTML = await AddPlayer();
+    const leaderBoardHTMLArea = document.querySelector(".teams_leaderboard");
     leaderBoardHTMLArea.innerHTML = await LeaderBoard();
   });
 
   document.addEventListener("newPlayer", async (event) => {
     const playerArea = document.querySelector(".playerFields");
     playerArea.innerHTML = await AddPlayer();
-    const leaderboardArea = document.querySelector(".teams");
+    const leaderboardArea = document.querySelector(".teams_leaderboard");
     leaderboardArea.innerHTML = await LeaderBoard();
   });
 
