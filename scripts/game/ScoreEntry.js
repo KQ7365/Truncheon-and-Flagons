@@ -38,6 +38,8 @@ export const handleSaveRoundButton = (clickEvent) => {
     const teamThreeInput = document.querySelector("#team_three").value;
     let teamThreeScore = parseInt(teamThreeInput);
     const roundTotal = teamOneScore + teamTwoScore + teamThreeScore;
+    console.log(teamOneScore);
+    console.log(roundTotal);
 
     const teamScores = currentScoresState();
 
