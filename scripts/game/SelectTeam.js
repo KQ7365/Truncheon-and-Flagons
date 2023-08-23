@@ -36,8 +36,16 @@ const handleFinalTeamSelection = (newEvent) => {
     teamStateClone.teamTwo &&
     teamStateClone.teamThree
   ) {
-    const stateChanged = new CustomEvent("renderTheRoundOneScoreBoard");
-    document.dispatchEvent(stateChanged);
+    if (
+      teamStateClone.teamOne !== teamStateClone.teamTwo &&
+      teamStateClone.teamOne !== teamStateClone.teamThree &&
+      teamStateClone.teamTwo !== teamStateClone.teamThree
+    ) {
+      const stateChanged = new CustomEvent("renderTheRoundOneScoreBoard");
+      document.dispatchEvent(stateChanged);
+    } else {
+      window.alert("Please select three unique teams.");
+    }
   }
 };
 document.addEventListener("teamOneSelected", handleFinalTeamSelection);
