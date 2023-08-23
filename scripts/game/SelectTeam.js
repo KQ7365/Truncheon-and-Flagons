@@ -34,7 +34,10 @@ const handleFinalTeamSelection = (newEvent) => {
   if (
     teamStateClone.teamOne &&
     teamStateClone.teamTwo &&
-    teamStateClone.teamThree
+    teamStateClone.teamThree &&
+    teamStateClone.teamOne !== teamStateClone.teamTwo &&
+    teamStateClone.teamOne !== teamStateClone.teamThree &&
+    teamStateClone.teamTwo !== teamStateClone.teamThree
   ) {
     const stateChanged = new CustomEvent("renderTheRoundOneScoreBoard");
     document.dispatchEvent(stateChanged);
