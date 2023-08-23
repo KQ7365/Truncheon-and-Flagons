@@ -124,7 +124,7 @@ const render = async () => {
 };
 
 document.addEventListener("roundOneTeamScores", (event) => {
-  const teamOneScores = document.querySelector(".rows");
+  const teamOneScores = document.querySelector(".teams_currentGame");
   teamOneScores.innerHTML = roundUpdates();
 });
 
