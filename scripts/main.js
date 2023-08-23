@@ -93,7 +93,6 @@ const render = async () => {
     const gameArea = document.querySelector(".gamePlay");
     gameArea.innerHTML = await SelectTeam();
   });
-
   document.addEventListener("teamOneSelected", (event) => {
     const teamOneScores = document.querySelector(".rows");
     teamOneScores.innerHTML = firstUpdate();
@@ -109,10 +108,10 @@ const render = async () => {
     teamThreeScores.innerHTML = thirdUpdate();
   });
 
-  // document.addEventListener("renderTheScoreBoard", async (event) => {
-  //   const renderNow = document.querySelector(".gamePlay");
-  //   renderNow.innerHTML = await ScoreEntryComponent();
-  // });
+  document.addEventListener("renderTheRoundOneScoreBoard", async (event) => {
+    const renderNow = document.querySelector(".gamePlay");
+    renderNow.innerHTML = await ScoreEntryComponent();
+  });
 };
 
 render();

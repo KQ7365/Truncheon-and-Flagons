@@ -2,9 +2,8 @@ import {
   setTeamOne,
   setTeamTwo,
   setTeamThree,
+  currentTeamsState,
 } from "../score/CurrentGameState.js";
-
-import { ScoreEntryComponent } from "./ScoreEntry.js";
 
 export const SelectTeam = async () => {
   const teamResponse = await fetch("http://localhost:8088/teams");
@@ -28,14 +27,22 @@ export const SelectTeam = async () => {
 
   return htmlString;
 };
-// document.querySelectorAll("teamChoice");
-// const handleFinalTeamSelection = async (changeEvent) => {
-//   if (changeEvent.target.id === "teamChoice") {
-//     const stateChanged = new CustomEvent("renderTheScoreBoard");
-//     document.dispatchEvent(stateChanged);
-//   }
-// };
-document.addEventListener("change", handleFinalTeamSelection);
+
+const handleFinalTeamSelection = (newEvent) => {
+  const teamStateClone = currentTeamsState();
+
+  if (
+    teamStateClone.teamOne &&
+    teamStateClone.teamTwo &&
+    teamStateClone.teamThree
+  ) {
+    const stateChanged = new CustomEvent("renderTheRoundOneScoreBoard");
+    document.dispatchEvent(stateChanged);
+  }
+};
+document.addEventListener("teamOneSelected", handleFinalTeamSelection);
+document.addEventListener("teamTwoSelected", handleFinalTeamSelection);
+document.addEventListener("teamThreeSelected", handleFinalTeamSelection);
 
 const teamOptions = (teams, players) => {
   let htmlString = "";
