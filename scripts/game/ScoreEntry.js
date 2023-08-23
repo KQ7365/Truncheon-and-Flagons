@@ -44,10 +44,13 @@ export const handleSaveRoundButton = (clickEvent) => {
     const teamScores = currentScoresState();
 
     if (roundTotal === 3) {
-      if (teamScores.scoreOne && teamScores.scoreTwo && teamScores.scoreThree) {
+      if (
+        teamScores.scoreOne + teamScores.scoreTwo + teamScores.scoreThree >=
+        3
+      ) {
         teamOneScore += teamScores.scoreOne;
         teamTwoScore += teamScores.scoreTwo;
-        teamThreeScore += teamScores.scoreOne;
+        teamThreeScore += teamScores.scoreThree;
         setScoreOne(teamOneScore);
         setScoreTwo(teamTwoScore);
         setScoreThree(teamThreeScore);
