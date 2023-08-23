@@ -9,7 +9,10 @@ import { StartButton } from "./game/StartButton.js";
 import { AddPlayer } from "./player/AddPlayer.js";
 import { AddTeam } from "./team/AddTeam.js";
 import { SelectTeam } from "./game/SelectTeam.js";
-import { ScoreEntryComponent } from "./game/ScoreEntry.js";
+import {
+  ScoreEntryComponent,
+  handleSaveRoundButton,
+} from "./game/ScoreEntry.js";
 
 const container = document.querySelector(".container");
 
@@ -110,9 +113,14 @@ const render = async () => {
     teamThreeScores.innerHTML = thirdUpdate();
   });
 
-  document.addEventListener("renderTheRoundOneScoreBoard", async (event) => {
+  document.addEventListener("renderTheRoundOneScoreBoard", (event) => {
     const renderNow = document.querySelector(".gamePlay");
-    renderNow.innerHTML = await ScoreEntryComponent();
+    renderNow.innerHTML = ScoreEntryComponent();
+  });
+
+  document.addEventListener("scoresEqualThree", (event) => {
+    const gameArea = document.querySelector(".gamePlay");
+    gameArea.innerHTML = ScoreEntryComponent();
   });
 };
 
