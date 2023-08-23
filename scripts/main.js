@@ -1,9 +1,13 @@
 import { LeaderBoard } from "./score/LeaderBoard.js";
-import { CurrentGameBoard } from "./score/CurrentGame.js";
+import {
+  CurrentGameBoard,
+  firstUpdate,
+  secondUpdate,
+  thirdUpdate,
+} from "./score/CurrentGame.js";
 import { StartButton } from "./game/StartButton.js";
 import { AddPlayer } from "./player/AddPlayer.js";
 import { AddTeam } from "./team/AddTeam.js";
-import { addNewTeam } from "./team/AddTeam.js";
 import { SelectTeam } from "./game/SelectTeam.js";
 
 const container = document.querySelector(".container");
@@ -33,7 +37,13 @@ const render = async () => {
 
         <div class="area gameScores">
           <h3>Current Game</h3>
-          ${CurrentGameBoard()}
+          <div class="teams">
+            <div class="rows">
+            ${CurrentGameBoard()}
+            </div>
+            <div class="rows row_two"></div>
+            <div class="rows row_three"></div>
+          </div>
         </div>
 
         <div class="area leaderboard">
@@ -82,6 +92,21 @@ const render = async () => {
     const gameArea = document.querySelector(".gamePlay");
     gameArea.innerHTML = await SelectTeam();
   });
+
+  document.addEventListener("teamOneSelected", (event) => {
+    const teamOneScores = document.querySelector(".rows");
+    teamOneScores.innerHTML = firstUpdate();
+  });
+
+  document.addEventListener("teamTwoSelected", (event) => {
+    const teamTwoScores = document.querySelector(".row_two");
+    teamTwoScores.innerHTML = secondUpdate();
+  });
+
+  document.addEventListener("teamThreeSelected", (event) => {
+    const teamThreeScores = document.querySelector(".row_three");
+    teamThreeScores.innerHTML = thirdUpdate();
+  });
 };
-// document.addEventListener("savingTeamHTML", render);
+
 render();

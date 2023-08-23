@@ -15,10 +15,6 @@ img {
 .header {
   width: 100%;
   min-height: 100px;
-  /* max-height: auto;
-  float: center;
-  margin: 3px;
-  padding: 3px;*/
 }
 
 .gamePlay {
@@ -35,4 +31,22 @@ img {
   margin-top: -8em;
   line-height: 2.3em;
   border: 0.25em dashed darkcyan;
+}
+
+.entryForm {
+  background-color: #b94704;
+  padding: 30px 40px;
+  border: 5px solid #f3af3b;
+  border-radius: 8px;
+  margin: 10em auto;
+  width: 60%;
+  box-shadow: inset 0 1px #fef1db, 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.entryForm_dropdown {
+  margin: 10px 0 0 0;
+}
+
+.entryForm_dropdown:hover {
+  border: 4px solid #f3af3b;
 }

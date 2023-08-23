@@ -8,12 +8,10 @@ let player = {
 
 export const setFirstName = (input) => {
   player.firstName = input;
-  console.log(player);
 };
 
 export const setLastName = (input) => {
   player.lastName = input;
-  console.log(player);
 };
 
 export const setOrigin = (input) => {
@@ -23,12 +21,10 @@ export const setOrigin = (input) => {
 
 export const setDateJoined = (input) => {
   player.dateJoined = input;
-  console.log(player);
 };
 
 export const setTeamId = (input) => {
   player.teamId = input;
-  console.log(player);
 };
 
 export const SavePlayer = async () => {
