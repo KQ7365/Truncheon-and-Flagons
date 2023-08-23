@@ -2,6 +2,7 @@ import { LeaderBoard } from "./score/LeaderBoard.js";
 import {
   CurrentGameBoard,
   firstUpdate,
+  roundUpdates,
   secondUpdate,
   thirdUpdate,
 } from "./score/CurrentGame.js";
@@ -121,5 +122,10 @@ const render = async () => {
     gameArea.innerHTML = ScoreEntryComponent();
   });
 };
+
+document.addEventListener("roundOneTeamScores", (event) => {
+  const teamOneScores = document.querySelector(".rows");
+  teamOneScores.innerHTML = roundUpdates();
+});
 
 render();
