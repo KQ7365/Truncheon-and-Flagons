@@ -4,7 +4,7 @@ export const ScoreEntryComponent = () => {
   const teamsPlaying = currentTeamsState();
   let html = `
     <form id="scoreEntryForm">
-    <h2>Round</h2>
+    <h2>Round ${roundCount}</h2>
         <fieldset>
         <p>${teamsPlaying.teamOne}</p>
             <input type="number" id="team_one" placeholder="Round Score"/>
@@ -19,6 +19,7 @@ export const ScoreEntryComponent = () => {
          </fieldset>
          <button class="btn btn--success btn--small" id="saveRound">Save Round Scores</button>
         `;
+  roundCount++;
   return html;
 };
 
