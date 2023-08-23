@@ -116,4 +116,19 @@ const render = async () => {
   });
 };
 
+document.addEventListener("teamOneScoreChange", (event) => {
+  const teamOneScores = document.querySelector(".rows");
+  teamOneScores.innerHTML = firstUpdate();
+});
+
+document.addEventListener("teamTwoScoreChange", (event) => {
+  const teamTwoScores = document.querySelector(".row_two");
+  teamTwoScores.innerHTML = secondUpdate();
+});
+
+document.addEventListener("teamThreeScoreChange", (event) => {
+  const teamThreeScores = document.querySelector(".row_three");
+  teamThreeScores.innerHTML = thirdUpdate();
+});
+
 render();
