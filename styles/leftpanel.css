@@ -42,3 +42,16 @@
   margin-top: 3px;
   margin-bottom: 3px;
 }
+
+.game_columnHeader {
+  margin-block-start: 0;
+  margin-block-end: 0.5em;
+}
+
+.game_name {
+  flex: 5;
+}
+
+.game_score {
+  text-align: center;
+}
