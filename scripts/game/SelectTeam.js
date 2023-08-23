@@ -1,3 +1,5 @@
+import { ScoreEntryComponent } from "./ScoreEntry.js";
+
 export const SelectTeam = async () => {
   const teamResponse = await fetch("http://localhost:8088/teams");
   const teams = await teamResponse.json();
@@ -18,6 +20,14 @@ export const SelectTeam = async () => {
 
   return htmlString;
 };
+// document.querySelectorAll("teamChoice");
+// const handleFinalTeamSelection = async (changeEvent) => {
+//   if (changeEvent.target.id === "teamChoice") {
+//     const stateChanged = new CustomEvent("renderTheScoreBoard");
+//     document.dispatchEvent(stateChanged);
+//   }
+// };
+document.addEventListener("change", handleFinalTeamSelection);
 
 const teamOptions = (teams, players) => {
   let htmlString = "";

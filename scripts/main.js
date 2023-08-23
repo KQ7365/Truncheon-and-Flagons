@@ -5,6 +5,7 @@ import { AddPlayer } from "./player/AddPlayer.js";
 import { AddTeam } from "./team/AddTeam.js";
 import { addNewTeam } from "./team/AddTeam.js";
 import { SelectTeam } from "./game/SelectTeam.js";
+import { ScoreEntryComponent } from "./game/ScoreEntry.js";
 
 const container = document.querySelector(".container");
 
@@ -82,6 +83,11 @@ const render = async () => {
     const gameArea = document.querySelector(".gamePlay");
     gameArea.innerHTML = await SelectTeam();
   });
+
+  // document.addEventListener("renderTheScoreBoard", async (event) => {
+  //   const renderNow = document.querySelector(".gamePlay");
+  //   renderNow.innerHTML = await ScoreEntryComponent();
+  // });
 };
-// document.addEventListener("savingTeamHTML", render);
+
 render();
