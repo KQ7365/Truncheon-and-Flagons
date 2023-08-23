@@ -32,7 +32,6 @@ export const handleSaveRoundButton = (clickEvent) => {
   if (clickEvent.target.id === "saveRound") {
     const teamOneInput = document.querySelector("#team_one").value;
     const teamOneScore = parseInt(teamOneInput);
-    debugger;
     const teamTwoInput = document.querySelector("#team_two").value;
     const teamTwoScore = parseInt(teamTwoInput);
     const teamThreeInput = document.querySelector("#team_three").value;
@@ -40,8 +39,14 @@ export const handleSaveRoundButton = (clickEvent) => {
     const roundTotal = teamOneScore + teamTwoScore + teamThreeScore;
 
     if (roundTotal === 3) {
+      setScoreOne(teamOneScore);
+      setScoreTwo(teamTwoScore);
+      setScoreThree(teamThreeScore);
+
       const scoreChange = new CustomEvent("scoresEqualThree");
       document.dispatchEvent(scoreChange);
+      const currentGameRoundOne = new CustomEvent("roundOneTeamScores");
+      document.dispatchEvent(currentGameRoundOne);
     } else {
       window.alert(
         `❌You must record 3 total points for each round. You entered ${roundTotal}❌`

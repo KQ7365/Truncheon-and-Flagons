@@ -2,6 +2,7 @@ import { LeaderBoard } from "./score/LeaderBoard.js";
 import {
   CurrentGameBoard,
   firstUpdate,
+  roundUpdates,
   secondUpdate,
   thirdUpdate,
 } from "./score/CurrentGame.js";
@@ -124,19 +125,9 @@ const render = async () => {
   });
 };
 
-document.addEventListener("teamOneScoreChange", (event) => {
+document.addEventListener("roundOneTeamScores", (event) => {
   const teamOneScores = document.querySelector(".rows");
-  teamOneScores.innerHTML = firstUpdate();
-});
-
-document.addEventListener("teamTwoScoreChange", (event) => {
-  const teamTwoScores = document.querySelector(".row_two");
-  teamTwoScores.innerHTML = secondUpdate();
-});
-
-document.addEventListener("teamThreeScoreChange", (event) => {
-  const teamThreeScores = document.querySelector(".row_three");
-  teamThreeScores.innerHTML = thirdUpdate();
+  teamOneScores.innerHTML = roundUpdates();
 });
 
 render();
