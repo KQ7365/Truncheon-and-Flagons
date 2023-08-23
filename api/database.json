@@ -21,9 +21,19 @@
       "dateCreated": "11/01/20"
     },
     {
-      "name": "TEST",
-      "dateCreated": "7/22/23",
+      "name": "The Code Wizards",
+      "dateCreated": "7/23/23",
       "id": 5
+    },
+    {
+      "name": "The Tech Titans",
+      "dateCreated": "7/23/23",
+      "id": 6
+    },
+    {
+      "name": "The Logic Legends",
+      "dateCreated": "7/23/23",
+      "id": 7
     }
   ],
   "players": [
@@ -114,6 +124,14 @@
       "origin": "Romania",
       "dateJoined": "08/10/03",
       "teamId": 4
+    },
+    {
+      "firstName": "Luca",
+      "lastName": "Rossi",
+      "origin": "Italy",
+      "dateJoined": "7/23/23",
+      "teamId": 4,
+      "id": 12
     }
   ],
   "scores": [
