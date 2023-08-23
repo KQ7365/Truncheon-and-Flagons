@@ -9,6 +9,7 @@ import { StartButton } from "./game/StartButton.js";
 import { AddPlayer } from "./player/AddPlayer.js";
 import { AddTeam } from "./team/AddTeam.js";
 import { SelectTeam } from "./game/SelectTeam.js";
+import { ScoreEntryComponent } from "./game/ScoreEntry.js";
 
 const container = document.querySelector(".container");
 
@@ -92,7 +93,6 @@ const render = async () => {
     const gameArea = document.querySelector(".gamePlay");
     gameArea.innerHTML = await SelectTeam();
   });
-
   document.addEventListener("teamOneSelected", (event) => {
     const teamOneScores = document.querySelector(".rows");
     teamOneScores.innerHTML = firstUpdate();
@@ -106,6 +106,11 @@ const render = async () => {
   document.addEventListener("teamThreeSelected", (event) => {
     const teamThreeScores = document.querySelector(".row_three");
     teamThreeScores.innerHTML = thirdUpdate();
+  });
+
+  document.addEventListener("renderTheRoundOneScoreBoard", async (event) => {
+    const renderNow = document.querySelector(".gamePlay");
+    renderNow.innerHTML = await ScoreEntryComponent();
   });
 };
 
