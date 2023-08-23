@@ -2,6 +2,7 @@ import {
   setTeamOne,
   setTeamTwo,
   setTeamThree,
+  currentTeamsState,
 } from "../score/CurrentGameState.js";
 
 export const SelectTeam = async () => {
@@ -26,6 +27,22 @@ export const SelectTeam = async () => {
 
   return htmlString;
 };
+
+const handleFinalTeamSelection = (newEvent) => {
+  const teamStateClone = currentTeamsState();
+
+  if (
+    teamStateClone.teamOne &&
+    teamStateClone.teamTwo &&
+    teamStateClone.teamThree
+  ) {
+    const stateChanged = new CustomEvent("renderTheRoundOneScoreBoard");
+    document.dispatchEvent(stateChanged);
+  }
+};
+document.addEventListener("teamOneSelected", handleFinalTeamSelection);
+document.addEventListener("teamTwoSelected", handleFinalTeamSelection);
+document.addEventListener("teamThreeSelected", handleFinalTeamSelection);
 
 const teamOptions = (teams, players) => {
   let htmlString = "";
