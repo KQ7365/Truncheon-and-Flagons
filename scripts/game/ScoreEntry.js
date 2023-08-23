@@ -3,13 +3,13 @@ export const ScoreEntryComponent = async () => {
     <form id="scoreEntryForm">
     <h2>Round</h2>
         <fieldset>
-            <input placeholder="Round Score"/>
+            <input type="number" placeholder="Round Score"/>
         </fieldset>
         <fieldset>
-             <input placeholder="Round Score"/>
+             <input type="number" placeholder="Round Score"/>
         </fieldset>
          <fieldset>
-            <input placeholder="Round Score"/>
+            <input type="number" placeholder="Round Score"/>
          </fieldset>
         `;
   return html;
