@@ -23,17 +23,14 @@ const currentScores = new Map([
 
 export const setTeamOne = (input) => {
   currentTeams.set("teamOne", input);
-  currentTeams.get("teamOne");
 };
 
 export const setTeamTwo = (input) => {
   currentTeams.set("teamTwo", input);
-  currentTeams.get("teamTwo");
 };
 
 export const setTeamThree = (input) => {
   currentTeams.set("teamThree", input);
-  currentTeams.get("teamThree");
 };
 
 export const setScoreOne = (input) => {

@@ -9,7 +9,6 @@ export const setScores = async () => {
   const currentTeams = currentTeamsState();
   const currentScores = currentScoresState();
   for (const theTeam of currentTeams.entries()) {
-    debugger;
     for (const team of teams) {
       if (theTeam[1] === team.name) {
         const teamId = team.id;
@@ -29,34 +28,24 @@ export const setScores = async () => {
 export const SaveScore = async () => {
   debugger;
   console.log(scoreState);
-  //   if (
-  //     currentScores.get("scoreOne") &&
-  //     currentScores.get("scoreTwo") &&
-  //     currentScores.get("scoreThree")
-  //   ) {
-  //     const postOptions = {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(player),
-  //     };
+  const postOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(Object.fromEntries(scoreState)),
+  };
 
-  //     const response = await fetch("http://localhost:8088/players", postOptions);
+  const response = await fetch("http://localhost:8088/scores", postOptions);
 
-  //     player = {
-  //       firstName: "",
-  //       lastName: "",
-  //       origin: "",
-  //       dateJoined: "",
-  //       teamId: 0,
-  //     };
+  // player = {
+  //   firstName: "",
+  //   lastName: "",
+  //   origin: "",
+  //   dateJoined: "",
+  //   teamId: 0,
+  // };
 
-  //     const stateChanged = new CustomEvent("newPlayer");
-  //     document.dispatchEvent(stateChanged);
-  //   } else {
-  //     const errorMessage = `<div class="message">Please fill out all fields</div>`;
-  //     const parentTag = document.querySelector(".error_message");
-  //     parentTag.innerHTML = errorMessage;
-  //   }
+  // const stateChanged = new CustomEvent("newPlayer");
+  // document.dispatchEvent(stateChanged);
 };
