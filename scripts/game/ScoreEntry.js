@@ -6,6 +6,7 @@ import {
   currentScoresState,
 } from "../score/CurrentGameState.js";
 import { setScores } from "../score/FinalGameScores.js";
+let roundCount = 1;
 
 export const ScoreEntryComponent = () => {
   const teamsPlaying = currentTeamsState();
