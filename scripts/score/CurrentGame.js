@@ -53,11 +53,19 @@ export const roundUpdates = () => {
   const teamState = currentTeamsState();
   const scoreState = currentScoresState();
   let html = `
-  <div class="team">
-  <div class="game_column game_name">${teamState.teamOne}</div>
-  <div class="team_column team_score">${scoreState.scoreOne}</div>
-  <div class="game_column game_name">${teamState.teamTwo}</div>
-  <div class="team_column team_score">${scoreState.scoreTwo}</div>
+  <div class="team game_header">
+    <h4 class="game_columnHeader game_name">Name</h4>
+    <h4 class="game_columnHeader game_score">Score</h4>
+  </div>
+  <div class="team team--1">
+    <div class="game_column game_name">${teamState.teamOne}</div>
+    <div class="team_column team_score">${scoreState.scoreOne}</div>
+  </div>
+  <div class="team team--2">
+    <div class="game_column game_name">${teamState.teamTwo}</div>
+    <div class="team_column team_score">${scoreState.scoreTwo}</div>
+  </div>
+  <div class="team team--3">
     <div class="game_column game_name">${teamState.teamThree}</div>
     <div class="team_column team_score">${scoreState.scoreThree}</div>
   </div>`;

@@ -10,10 +10,7 @@ import { StartButton } from "./game/StartButton.js";
 import { AddPlayer } from "./player/AddPlayer.js";
 import { AddTeam } from "./team/AddTeam.js";
 import { SelectTeam } from "./game/SelectTeam.js";
-import {
-  ScoreEntryComponent,
-  handleSaveRoundButton,
-} from "./game/ScoreEntry.js";
+import { ScoreEntryComponent } from "./game/ScoreEntry.js";
 
 const container = document.querySelector(".container");
 
@@ -21,6 +18,7 @@ const render = async () => {
   const startButton = StartButton();
   const addTeam = await AddTeam();
   const addPlayer = await AddPlayer();
+  const addCurrentGame = CurrentGameBoard();
   const leaderboard = await LeaderBoard();
   const composedHTML = `
     <section class="data">
@@ -44,7 +42,7 @@ const render = async () => {
           <h3>Current Game</h3>
           <div class="teams teams_currentGame">
             <div class="rows">
-            ${CurrentGameBoard()}
+            ${addCurrentGame}
             </div>
             <div class="rows row_two"></div>
             <div class="rows row_three"></div>
@@ -126,7 +124,7 @@ const render = async () => {
 };
 
 document.addEventListener("roundOneTeamScores", (event) => {
-  const teamOneScores = document.querySelector(".rows");
+  const teamOneScores = document.querySelector(".teams_currentGame");
   teamOneScores.innerHTML = roundUpdates();
 });
 

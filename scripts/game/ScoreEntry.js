@@ -3,6 +3,7 @@ import {
   setScoreOne,
   setScoreTwo,
   setScoreThree,
+  currentScoresState,
 } from "../score/CurrentGameState.js";
 
 export const ScoreEntryComponent = () => {
@@ -31,22 +32,27 @@ export const handleSaveRoundButton = (clickEvent) => {
   clickEvent.preventDefault();
   if (clickEvent.target.id === "saveRound") {
     const teamOneInput = document.querySelector("#team_one").value;
-    const teamOneScore = parseInt(teamOneInput);
+    let teamOneScore = parseInt(teamOneInput);
     const teamTwoInput = document.querySelector("#team_two").value;
-    const teamTwoScore = parseInt(teamTwoInput);
+    let teamTwoScore = parseInt(teamTwoInput);
     const teamThreeInput = document.querySelector("#team_three").value;
-    const teamThreeScore = parseInt(teamThreeInput);
+    let teamThreeScore = parseInt(teamThreeInput);
     const roundTotal = teamOneScore + teamTwoScore + teamThreeScore;
 
+    const teamScores = currentScoresState();
+
     if (roundTotal === 3) {
+      teamOneScore += teamScores.scoreOne;
+      teamTwoScore += teamScores.scoreTwo;
+      teamThreeScore += teamScores.scoreThree;
       setScoreOne(teamOneScore);
       setScoreTwo(teamTwoScore);
       setScoreThree(teamThreeScore);
 
       const scoreChange = new CustomEvent("scoresEqualThree");
       document.dispatchEvent(scoreChange);
-      const currentGameRoundOne = new CustomEvent("roundOneTeamScores");
-      document.dispatchEvent(currentGameRoundOne);
+      const currentGameScore = new CustomEvent("roundOneTeamScores");
+      document.dispatchEvent(currentGameScore);
     } else {
       window.alert(
         `❌You must record 3 total points for each round. You entered ${roundTotal}❌`
