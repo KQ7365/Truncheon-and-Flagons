@@ -1,15 +1,14 @@
+import { getDate } from "../date.js";
+
 export const addNewTeam = async () => {
   const teamNameInput = document.getElementById("teamnameinput"); //* targeting the input field (see AddTeam() HTML) and stored in variable.
   const teamName = teamNameInput.value; //? input field is now dynamic with whatever is typed in it and stored in variable.
 
-  const date = new Date();
-  const day = date.getDate();
-  const month = date.getMonth();
-  const year = String(date.getFullYear()).slice(-2);
+  const date = getDate();
 
   const data = {
     name: teamName, //* creating the naming convention for the object being typed in the input field
-    dateCreated: `${month}/${day}/${year}`,
+    dateCreated: `${date}`,
   };
 
   if (teamNameInput.value === "") {

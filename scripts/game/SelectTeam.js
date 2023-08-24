@@ -32,14 +32,14 @@ const handleFinalTeamSelection = (newEvent) => {
   const teamStateClone = currentTeamsState();
 
   if (
-    teamStateClone.teamOne &&
-    teamStateClone.teamTwo &&
-    teamStateClone.teamThree
+    teamStateClone.get("teamOne") &&
+    teamStateClone.get("teamTwo") &&
+    teamStateClone.get("teamThree")
   ) {
     if (
-      teamStateClone.teamOne !== teamStateClone.teamTwo &&
-      teamStateClone.teamOne !== teamStateClone.teamThree &&
-      teamStateClone.teamTwo !== teamStateClone.teamThree
+      teamStateClone.get("teamOne") !== teamStateClone.get("teamTwo") &&
+      teamStateClone.get("teamOne") !== teamStateClone.get("teamThree") &&
+      teamStateClone.get("teamTwo") !== teamStateClone.get("teamThree")
     ) {
       const stateChanged = new CustomEvent("renderTheRoundOneScoreBoard");
       document.dispatchEvent(stateChanged);

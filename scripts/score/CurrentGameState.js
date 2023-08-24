@@ -1,40 +1,51 @@
-let currentTeams = {
-  teamOne: "",
-  teamTwo: "",
-  teamThree: "",
-};
+// let currentTeams = {
+//   teamOne: "",
+//   teamTwo: "",
+//   teamThree: "",
+// };
+// let currentScores = {
+//   scoreOne: 0,
+//   scoreTwo: 0,
+//   scoreThree: 0,
+// };
 
-let currentScores = {
-  scoreOne: 0,
-  scoreTwo: 0,
-  scoreThree: 0,
-};
+const currentTeams = new Map([
+  ["teamOne", ""],
+  ["teamTwo", ""],
+  ["teamThree", ""],
+]);
+
+const currentScores = new Map([
+  ["teamOne", 0],
+  ["teamTwo", 0],
+  ["teamThree", 0],
+]);
 
 export const setTeamOne = (input) => {
-  currentTeams.teamOne = input;
+  currentTeams.set("teamOne", input);
+  currentTeams.get("teamOne");
 };
 
 export const setTeamTwo = (input) => {
-  currentTeams.teamTwo = input;
+  currentTeams.set("teamTwo", input);
+  currentTeams.get("teamTwo");
 };
 
 export const setTeamThree = (input) => {
-  currentTeams.teamThree = input;
+  currentTeams.set("teamThree", input);
+  currentTeams.get("teamThree");
 };
 
 export const setScoreOne = (input) => {
-  currentScores.scoreOne = input;
-  console.log(currentScores);
+  currentScores.set("teamOne", input);
 };
 
 export const setScoreTwo = (input) => {
-  currentScores.scoreTwo = input;
-  console.log(currentScores);
+  currentScores.set("teamTwo", input);
 };
 
 export const setScoreThree = (input) => {
-  currentScores.scoreThree = input;
-  console.log(currentScores);
+  currentScores.set("teamThree", input);
 };
 
 export const currentTeamsState = () => {
@@ -44,32 +55,3 @@ export const currentTeamsState = () => {
 export const currentScoresState = () => {
   return structuredClone(currentScores);
 };
-
-// export const SaveScore = async () => {
-//   if (player.firstName && player.lastName && player.origin && player.teamId) {
-//     const postOptions = {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(player),
-//     };
-
-//     const response = await fetch("http://localhost:8088/players", postOptions);
-
-//     player = {
-//       firstName: "",
-//       lastName: "",
-//       origin: "",
-//       dateJoined: "",
-//       teamId: 0,
-//     };
-
-//     const stateChanged = new CustomEvent("newPlayer");
-//     document.dispatchEvent(stateChanged);
-//   } else {
-//     const errorMessage = `<div class="message">Please fill out all fields</div>`;
-//     const parentTag = document.querySelector(".error_message");
-//     parentTag.innerHTML = errorMessage;
-//   }
-// };
