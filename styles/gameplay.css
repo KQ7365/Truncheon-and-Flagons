@@ -50,3 +50,13 @@ img {
 .entryForm_dropdown:hover {
   border: 4px solid #f3af3b;
 }
+
+.round_team_name {
+  margin-block-end: 0.25em;
+  color: #f3af3b;
+  font-weight: bold;
+}
+
+.round_header {
+  color: #f3af3b;
+}
