@@ -26,8 +26,6 @@ export const setScores = async () => {
 };
 
 export const SaveScore = async () => {
-  debugger;
-  console.log(scoreState);
   const postOptions = {
     method: "POST",
     headers: {
@@ -37,15 +35,4 @@ export const SaveScore = async () => {
   };
 
   const response = await fetch("http://localhost:8088/scores", postOptions);
-
-  // player = {
-  //   firstName: "",
-  //   lastName: "",
-  //   origin: "",
-  //   dateJoined: "",
-  //   teamId: 0,
-  // };
-
-  // const stateChanged = new CustomEvent("newPlayer");
-  // document.dispatchEvent(stateChanged);
 };
