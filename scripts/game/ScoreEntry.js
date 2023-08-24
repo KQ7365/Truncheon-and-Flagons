@@ -1,4 +1,11 @@
-import { currentTeamsState } from "../score/CurrentGameState.js";
+import {
+  currentTeamsState,
+  setScoreOne,
+  setScoreTwo,
+  setScoreThree,
+  currentScoresState,
+} from "../score/CurrentGameState.js";
+import { setScores } from "../score/FinalGameScores.js";
 
 export const ScoreEntryComponent = () => {
   const teamsPlaying = currentTeamsState();
@@ -6,15 +13,15 @@ export const ScoreEntryComponent = () => {
     <form id="scoreEntryForm">
     <h2>Round ${roundCount}</h2>
         <fieldset>
-        <p>${teamsPlaying.teamOne}</p>
+        <p>${teamsPlaying.get("teamOne")}</p>
             <input type="number" id="team_one" placeholder="Round Score"/>
         </fieldset>
         <fieldset>
-          <p>${teamsPlaying.teamTwo}</p>
+          <p>${teamsPlaying.get("teamTwo")}</p>
              <input type="number" id="team_two" placeholder="Round Score"/>
         </fieldset>
          <fieldset>
-          <p>${teamsPlaying.teamThree}</p>
+          <p>${teamsPlaying.get("teamThree")}</p>
             <input type="number" id="team_three" placeholder="Round Score"/>
          </fieldset>
          <button class="btn btn--success btn--small" id="saveRound">Save Round Scores</button>
@@ -27,17 +34,31 @@ export const handleSaveRoundButton = (clickEvent) => {
   clickEvent.preventDefault();
   if (clickEvent.target.id === "saveRound") {
     const teamOneInput = document.querySelector("#team_one").value;
-    const teamOneScore = parseInt(teamOneInput);
-    debugger;
+    let teamOneScore = parseInt(teamOneInput);
     const teamTwoInput = document.querySelector("#team_two").value;
-    const teamTwoScore = parseInt(teamTwoInput);
+    let teamTwoScore = parseInt(teamTwoInput);
     const teamThreeInput = document.querySelector("#team_three").value;
-    const teamThreeScore = parseInt(teamThreeInput);
+    let teamThreeScore = parseInt(teamThreeInput);
     const roundTotal = teamOneScore + teamTwoScore + teamThreeScore;
 
+    const teamScores = currentScoresState();
+
     if (roundTotal === 3) {
+      teamOneScore += teamScores.get("teamOne");
+      teamTwoScore += teamScores.get("teamTwo");
+      teamThreeScore += teamScores.get("teamThree");
+      setScoreOne(teamOneScore);
+      setScoreTwo(teamTwoScore);
+      setScoreThree(teamThreeScore);
+      const total = teamOneScore + teamTwoScore + teamThreeScore;
+      if (total === 9) {
+        setScores();
+      }
+
       const scoreChange = new CustomEvent("scoresEqualThree");
       document.dispatchEvent(scoreChange);
+      const currentGameScore = new CustomEvent("roundOneTeamScores");
+      document.dispatchEvent(currentGameScore);
     } else {
       window.alert(
         `❌You must record 3 total points for each round. You entered ${roundTotal}❌`

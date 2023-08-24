@@ -18,8 +18,8 @@ export const firstUpdate = () => {
 
   html += `
   <div class="team">
-    <div class="game_column game_name">${teamState.teamOne}</div>
-    <div class="team_column team_score">${scoreState.scoreOne}</div>
+    <div class="game_column game_name">${teamState.get("teamOne")}</div>
+    <div class="team_column team_score">${scoreState.get("teamOne")}</div>
   </div>`;
 
   return html;
@@ -30,8 +30,8 @@ export const secondUpdate = () => {
   const scoreState = currentScoresState();
   let html = `
   <div class="team">
-    <div class="game_column game_name">${teamState.teamTwo}</div>
-    <div class="team_column team_score">${scoreState.scoreTwo}</div>
+    <div class="game_column game_name">${teamState.get("teamTwo")}</div>
+    <div class="team_column team_score">${scoreState.get("teamTwo")}</div>
   </div>`;
 
   return html;
@@ -42,9 +42,32 @@ export const thirdUpdate = () => {
   const scoreState = currentScoresState();
   let html = `
   <div class="team">
-    <div class="game_column game_name">${teamState.teamThree}</div>
-    <div class="team_column team_score">${scoreState.scoreThree}</div>
+    <div class="game_column game_name">${teamState.get("teamThree")}</div>
+    <div class="team_column team_score">${scoreState.get("teamThree")}</div>
   </div>`;
+
+  return html;
+};
+
+export const roundUpdates = () => {
+  const teamState = currentTeamsState();
+  const scoreState = currentScoresState();
+  let html = `
+  <div class="team game_header">
+    <h4 class="game_columnHeader game_name">Name</h4>
+    <h4 class="game_columnHeader game_score">Score</h4>
+  </div>`;
+  for (const team of teamState.entries()) {
+    for (const score of scoreState.entries()) {
+      if (team[0] === score[0]) {
+        html += `
+        <div class="team">
+          <div class="game_column game_name">${team[1]}</div>
+          <div class="team_column team_score">${score[1]}</div>
+        </div>`;
+      }
+    }
+  }
 
   return html;
 };
