@@ -17,6 +17,10 @@ export const setScores = async () => {
           if (theScore[0] === theTeam[0]) {
             scoreState.set("score", theScore[1]);
             scoreState.set("gameDate", getDate());
+            const customEvent = new CustomEvent(
+              "finalScoresAddedToLeaderboard"
+            );
+            document.dispatchEvent(customEvent);
             SaveScore();
           }
         }
@@ -26,7 +30,6 @@ export const setScores = async () => {
 };
 
 export const SaveScore = async () => {
-  debugger;
   console.log(scoreState);
   const postOptions = {
     method: "POST",

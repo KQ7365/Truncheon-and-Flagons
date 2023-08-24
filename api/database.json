@@ -3,17 +3,17 @@
     {
       "id": 1,
       "name": "The Query Kings",
-      "dateCreated": "1/01/21"
+      "dateCreated": "01/01/21"
     },
     {
       "id": 2,
       "name": "The Data Dudes",
-      "dateCreated": "1/02/22"
+      "dateCreated": "01/02/22"
     },
     {
       "id": 3,
       "name": "The Byte Busters",
-      "dateCreated": "2/05/20"
+      "dateCreated": "02/05/20"
     },
     {
       "id": 4,
@@ -22,17 +22,17 @@
     },
     {
       "name": "The Code Wizards",
-      "dateCreated": "8/23/23",
+      "dateCreated": "7/23/23",
       "id": 5
     },
     {
       "name": "The Tech Titans",
-      "dateCreated": "8/23/23",
+      "dateCreated": "7/23/23",
       "id": 6
     },
     {
       "name": "The Logic Legends",
-      "dateCreated": "8/23/23",
+      "dateCreated": "7/23/23",
       "id": 7
     }
   ],
@@ -42,7 +42,7 @@
       "firstName": "John",
       "lastName": "Doe",
       "origin": "USA",
-      "dateJoined": "2/07/18",
+      "dateJoined": "02/07/18",
       "teamId": 1
     },
     {
@@ -50,7 +50,7 @@
       "firstName": "Jane",
       "lastName": "Smith",
       "origin": "UK",
-      "dateJoined": "1/07/13",
+      "dateJoined": "01/07/13",
       "teamId": 2
     },
     {
@@ -66,7 +66,7 @@
       "firstName": "Emily",
       "lastName": "Brown",
       "origin": "Australia",
-      "dateJoined": "6/07/91",
+      "dateJoined": "06/07/91",
       "teamId": 1
     },
     {
@@ -90,7 +90,7 @@
       "firstName": "Robert",
       "lastName": "Clark",
       "origin": "USA",
-      "dateJoined": "5/01/66",
+      "dateJoined": "05/01/66",
       "teamId": 1
     },
     {
@@ -98,7 +98,7 @@
       "firstName": "Olivia",
       "lastName": "Anderson",
       "origin": "UK",
-      "dateJoined": "1/01/01",
+      "dateJoined": "01/01/01",
       "teamId": 2
     },
     {
@@ -106,7 +106,7 @@
       "firstName": "Daniel",
       "lastName": "Martin",
       "origin": "Canada",
-      "dateJoined": "2/22/45",
+      "dateJoined": "02/22/45",
       "teamId": 3
     },
     {
@@ -114,7 +114,7 @@
       "firstName": "Todd",
       "lastName": "SillyPants",
       "origin": "Fiji",
-      "dateJoined": "8/09/02",
+      "dateJoined": "08/09/02",
       "teamId": 4
     },
     {
@@ -122,14 +122,14 @@
       "firstName": "Marsha",
       "lastName": "Rose",
       "origin": "Romania",
-      "dateJoined": "8/10/03",
+      "dateJoined": "08/10/03",
       "teamId": 4
     },
     {
       "firstName": "Luca",
       "lastName": "Rossi",
       "origin": "Italy",
-      "dateJoined": "8/23/23",
+      "dateJoined": "7/23/23",
       "teamId": 4,
       "id": 12
     }
@@ -139,37 +139,217 @@
       "id": 1,
       "teamId": 1,
       "score": 6,
-      "gameDate": "8/17/23"
+      "gameDate": "08/17/23"
     },
     {
       "id": 2,
       "teamId": 2,
       "score": 2,
-      "gameDate": "8/17/23"
+      "gameDate": "08/17/23"
     },
     {
       "id": 3,
       "teamId": 3,
       "score": 1,
-      "gameDate": "8/17/23"
+      "gameDate": "08/17/23"
     },
     {
       "teamId": 1,
-      "score": 6,
+      "score": 4,
       "gameDate": "8/24/23",
       "id": 4
     },
     {
-      "teamId": 2,
+      "teamId": 3,
       "score": 3,
       "gameDate": "8/24/23",
       "id": 5
     },
     {
-      "teamId": 3,
-      "score": 0,
+      "teamId": 2,
+      "score": 2,
       "gameDate": "8/24/23",
       "id": 6
+    },
+    {
+      "teamId": 1,
+      "score": 4,
+      "gameDate": "8/24/23",
+      "id": 7
+    },
+    {
+      "teamId": 2,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 8
+    },
+    {
+      "teamId": 4,
+      "score": 2,
+      "gameDate": "8/24/23",
+      "id": 9
+    },
+    {
+      "teamId": 1,
+      "score": 4,
+      "gameDate": "8/24/23",
+      "id": 10
+    },
+    {
+      "teamId": 2,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 11
+    },
+    {
+      "teamId": 3,
+      "score": 2,
+      "gameDate": "8/24/23",
+      "id": 12
+    },
+    {
+      "teamId": 1,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 13
+    },
+    {
+      "teamId": 2,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 14
+    },
+    {
+      "teamId": 3,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 15
+    },
+    {
+      "teamId": 1,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 16
+    },
+    {
+      "teamId": 2,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 17
+    },
+    {
+      "teamId": 3,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 18
+    },
+    {
+      "teamId": 1,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 19
+    },
+    {
+      "teamId": 3,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 20
+    },
+    {
+      "teamId": 2,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 21
+    },
+    {
+      "teamId": 1,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 22
+    },
+    {
+      "teamId": 2,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 23
+    },
+    {
+      "teamId": 3,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 24
+    },
+    {
+      "teamId": 1,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 25
+    },
+    {
+      "teamId": 2,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 26
+    },
+    {
+      "teamId": 3,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 27
+    },
+    {
+      "teamId": 2,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 28
+    },
+    {
+      "teamId": 3,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 29
+    },
+    {
+      "teamId": 1,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 30
+    },
+    {
+      "teamId": 1,
+      "score": 4,
+      "gameDate": "8/24/23",
+      "id": 31
+    },
+    {
+      "teamId": 2,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 32
+    },
+    {
+      "teamId": 4,
+      "score": 2,
+      "gameDate": "8/24/23",
+      "id": 33
+    },
+    {
+      "teamId": 2,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 34
+    },
+    {
+      "teamId": 1,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 35
+    },
+    {
+      "teamId": 3,
+      "score": 3,
+      "gameDate": "8/24/23",
+      "id": 36
     }
   ]
 }

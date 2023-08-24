@@ -121,11 +121,16 @@ const render = async () => {
     const gameArea = document.querySelector(".gamePlay");
     gameArea.innerHTML = ScoreEntryComponent();
   });
-};
 
-document.addEventListener("roundOneTeamScores", (event) => {
-  const teamOneScores = document.querySelector(".teams_currentGame");
-  teamOneScores.innerHTML = roundUpdates();
-});
+  document.addEventListener("roundOneTeamScores", (event) => {
+    const teamOneScores = document.querySelector(".teams_currentGame");
+    teamOneScores.innerHTML = roundUpdates();
+  });
+
+  document.addEventListener("finalScoresAddedToLeaderboard", async (event) => {
+    const totalTeamScores = document.querySelector(".teams_leaderboard");
+    totalTeamScores.innerHTML = await LeaderBoard();
+  });
+};
 
 render();
