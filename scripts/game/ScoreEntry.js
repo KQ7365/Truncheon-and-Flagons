@@ -56,8 +56,8 @@ export const handleSaveRoundButton = (clickEvent) => {
 
       const scoreChange = new CustomEvent("scoresEqualThree");
       document.dispatchEvent(scoreChange);
-      const currentGameRoundOne = new CustomEvent("roundOneTeamScores");
-      document.dispatchEvent(currentGameRoundOne);
+      const currentGameScore = new CustomEvent("roundOneTeamScores");
+      document.dispatchEvent(currentGameScore);
     } else {
       window.alert(
         `❌You must record 3 total points for each round. You entered ${roundTotal}❌`
