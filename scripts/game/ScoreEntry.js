@@ -34,7 +34,7 @@ export const ScoreEntryComponent = () => {
     const theWinner = calculateWinner();
     let finalHtml = "";
     finalHtml += `<div class="endOfGame">
-                        <h2>🍻${theWinner}🍻</h2>
+                        <h2 class="winner_header">🍻${theWinner}🍻</h2>
                         <h3></h3>
                         <button class="startOver" role="button" id="startNewGame">Start New Game</button>
                         </div>

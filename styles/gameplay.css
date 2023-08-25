@@ -65,6 +65,17 @@ img {
   text-align: center;
   font-size: 150%;
   margin-top: 200px;
-  border-style: solid;
-  border-width: medium;
+  /* border-style: solid;
+  border-width: medium; */
+  background-color: #868686;
+  padding: 30px 40px;
+  border: 5px solid #b94704;
+  border-radius: 8px;
+  margin: 10em auto;
+  width: 60%;
+  box-shadow: inset 0 1px #fef1db, 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.winner_header {
+  color: white;
 }
