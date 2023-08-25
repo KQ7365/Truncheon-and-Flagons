@@ -60,3 +60,18 @@
   background: linear-gradient(to bottom, #ffcc80 0%, #ffb74d 100%);
   box-shadow: inset 0 1px #fff3e0, 0 2px 3px rgba(0, 0, 0, 0.2);
 }
+
+.btn--info {
+  color: #eeecec;
+  border-color: #2a2a2a;
+  background: linear-gradient(to bottom, #808080 0%, #323232 100%);
+  box-shadow: inset 0 1px #cbc9c9, 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.btn--info:hover,
+.btn--info:focus,
+.btn--info.focus {
+  border-color: #323232;
+  background: linear-gradient(to bottom, #f1c882 0%, #f3af3b 100%);
+  box-shadow: inset 0 1px #eeecec, 0 2px 3px rgba(0, 0, 0, 0.2);
+}

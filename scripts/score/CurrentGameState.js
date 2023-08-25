@@ -1,14 +1,3 @@
-// let currentTeams = {
-//   teamOne: "",
-//   teamTwo: "",
-//   teamThree: "",
-// };
-// let currentScores = {
-//   scoreOne: 0,
-//   scoreTwo: 0,
-//   scoreThree: 0,
-// };
-
 const currentTeams = new Map([
   ["teamOne", ""],
   ["teamTwo", ""],

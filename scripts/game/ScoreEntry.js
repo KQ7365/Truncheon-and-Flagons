@@ -6,26 +6,28 @@ import {
   currentScoresState,
 } from "../score/CurrentGameState.js";
 import { setScores } from "../score/FinalGameScores.js";
+let roundCount = 1;
 
 export const ScoreEntryComponent = () => {
   const teamsPlaying = currentTeamsState();
   let html = `
-    <form id="scoreEntryForm">
-    <h2>Round</h2>
+    <form class="entryForm round">
+    <h2 class="round_header">Round ${roundCount}</h2>
         <fieldset>
-        <p>${teamsPlaying.get("teamOne")}</p>
-            <input type="number" id="team_one" placeholder="Round Score"/>
+        <p class="round_team_name">${teamsPlaying.get("teamOne")}</p>
+            <input type="number" id="team_one" min="0" max="9" placeholder="Round Score"/>
         </fieldset>
         <fieldset>
-          <p>${teamsPlaying.get("teamTwo")}</p>
-             <input type="number" id="team_two" placeholder="Round Score"/>
+          <p class="round_team_name">${teamsPlaying.get("teamTwo")}</p>
+             <input type="number" id="team_two" min="0" max="9" placeholder="Round Score"/>
         </fieldset>
          <fieldset>
-          <p>${teamsPlaying.get("teamThree")}</p>
-            <input type="number" id="team_three" placeholder="Round Score"/>
+          <p class="round_team_name">${teamsPlaying.get("teamThree")}</p>
+            <input type="number" id="team_three" min="0" max="9" placeholder="Round Score"/>
          </fieldset>
-         <button class="btn btn--success btn--small" id="saveRound">Save Round Scores</button>
+         <button class="btn btn--info" id="saveRound">Save Round Scores</button>
         `;
+  roundCount++;
   return html;
 };
 
