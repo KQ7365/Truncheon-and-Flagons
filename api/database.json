@@ -34,16 +34,6 @@
       "name": "The Logic Legends",
       "dateCreated": "7/23/23",
       "id": 7
-    },
-    {
-      "name": "Among the trees",
-      "dateCreated": "8/24/23",
-      "id": 8
-    },
-    {
-      "name": "Luke and Vince",
-      "dateCreated": "8/24/23",
-      "id": 9
     }
   ],
   "players": [
@@ -142,14 +132,6 @@
       "dateJoined": "7/23/23",
       "teamId": 4,
       "id": 12
-    },
-    {
-      "firstName": "Peter",
-      "lastName": "Tree",
-      "origin": "USA",
-      "dateJoined": "8/24/23",
-      "teamId": 8,
-      "id": 13
     }
   ],
   "scores": [
