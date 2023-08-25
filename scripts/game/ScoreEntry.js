@@ -31,10 +31,11 @@ export const ScoreEntryComponent = () => {
          <button class="btn btn--info" id="saveRound">Save Round Scores</button>
         `;
   if (roundCount > 3) {
+    const theWinner = calculateWinner();
     let finalHtml = "";
     finalHtml += `<div class="endOfGame">
-                        <h2>🍻Game Over🍻</h2>
-                        <h3>🍻Congrats to the winner!🍻</h3>
+                        <h2>🍻${theWinner}🍻</h2>
+                        <h3></h3>
                         <button class="startOver" role="button" id="startNewGame">Start New Game</button>
                         </div>
                       `;
@@ -44,6 +45,28 @@ export const ScoreEntryComponent = () => {
   roundCount++;
   return html;
 };
+
+const calculateWinner = () => {
+  const teamScores = currentScoresState();
+
+  const teamOneScore = teamScores.get("teamOne");
+  const teamTwoScore = teamScores.get("teamTwo");
+  const teamThreeScore = teamScores.get("teamThree");
+
+  if (teamOneScore > teamTwoScore && teamOneScore > teamThreeScore) {
+    const teamOneMessage = currentTeamsState().get("teamOne");
+    return `${teamOneMessage} are the winners`;
+  } else if (teamTwoScore > teamOneScore && teamTwoScore > teamThreeScore) {
+    const teamTwoMessage = currentTeamsState().get("teamTwo");
+    return `${teamTwoMessage} are the winners`;
+  } else if (teamThreeScore > teamOneScore && teamThreeScore > teamTwoScore) {
+    const teamThreeMessage = currentTeamsState().get("teamThree");
+    return `${teamThreeMessage} are the winners`;
+  } else {
+    return "It's a tie!";
+  }
+};
+
 const handleStartNewGameClick = (clickEvent) => {
   if (clickEvent.target.id === "startNewGame") {
     setTeamOne("");
