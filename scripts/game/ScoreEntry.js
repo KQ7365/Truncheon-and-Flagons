@@ -4,6 +4,9 @@ import {
   setScoreTwo,
   setScoreThree,
   currentScoresState,
+  setTeamOne,
+  setTeamTwo,
+  setTeamThree,
 } from "../score/CurrentGameState.js";
 import { setScores } from "../score/FinalGameScores.js";
 let roundCount = 1;
@@ -27,9 +30,33 @@ export const ScoreEntryComponent = () => {
          </fieldset>
          <button class="btn btn--info" id="saveRound">Save Round Scores</button>
         `;
+  if (roundCount > 3) {
+    let finalHtml = "";
+    finalHtml += `<div class="endOfGame">
+                        <h2>🍻Game Over🍻</h2>
+                        <h3>🍻Congrats to the winner!🍻</h3>
+                        <button class="startOver" role="button" id="startNewGame">Start New Game</button>
+                        </div>
+                      `;
+
+    return finalHtml;
+  }
   roundCount++;
   return html;
 };
+const handleStartNewGameClick = (clickEvent) => {
+  if (clickEvent.target.id === "startNewGame") {
+    setTeamOne("");
+    setTeamTwo("");
+    setTeamThree("");
+    setScoreOne(0);
+    setScoreTwo(0);
+    setScoreThree(0);
+    window.location.reload();
+  }
+};
+
+document.addEventListener("click", handleStartNewGameClick);
 
 export const handleSaveRoundButton = (clickEvent) => {
   clickEvent.preventDefault();
