@@ -60,3 +60,11 @@ img {
 .round_header {
   color: #f3af3b;
 }
+
+.endOfGame {
+  text-align: center;
+  font-size: 150%;
+  margin-top: 200px;
+  border-style: solid;
+  border-width: medium;
+}

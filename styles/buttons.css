@@ -75,3 +75,37 @@
   background: linear-gradient(to bottom, #f1c882 0%, #f3af3b 100%);
   box-shadow: inset 0 1px #eeecec, 0 2px 3px rgba(0, 0, 0, 0.2);
 }
+
+.startOver {
+  margin: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(
+    45deg,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.startOver:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.startOver:active {
+  transform: scale(0.95);
+}

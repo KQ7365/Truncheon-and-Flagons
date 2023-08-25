@@ -68,9 +68,6 @@ const render = async () => {
         </div>   
 
         <div class="gamePlay">
-          <audio controls>
-            <source src="irish-jig-99533.mp3" />
-          </audio>
           ${startButton}
         </div>
     </section>
