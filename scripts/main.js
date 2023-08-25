@@ -14,7 +14,7 @@ import { ScoreEntryComponent } from "./game/ScoreEntry.js";
 
 const container = document.querySelector(".container");
 
-const render = async () => {
+export const render = async () => {
   const startButton = StartButton();
   const addTeam = await AddTeam();
   const addPlayer = await AddPlayer();
@@ -68,9 +68,6 @@ const render = async () => {
         </div>   
 
         <div class="gamePlay">
-          <audio controls>
-            <source src="irish-jig-99533.mp3" />
-          </audio>
           ${startButton}
         </div>
     </section>
