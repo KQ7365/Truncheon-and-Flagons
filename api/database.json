@@ -2114,6 +2114,42 @@
       "score": 2,
       "gameDate": "8/25/23",
       "id": 327
+    },
+    {
+      "teamId": 1,
+      "score": 3,
+      "gameDate": "8/25/23",
+      "id": 328
+    },
+    {
+      "teamId": 2,
+      "score": 4,
+      "gameDate": "8/25/23",
+      "id": 329
+    },
+    {
+      "teamId": 3,
+      "score": 2,
+      "gameDate": "8/25/23",
+      "id": 330
+    },
+    {
+      "teamId": 1,
+      "score": 4,
+      "gameDate": "8/25/23",
+      "id": 331
+    },
+    {
+      "teamId": 3,
+      "score": 3,
+      "gameDate": "8/25/23",
+      "id": 332
+    },
+    {
+      "teamId": 4,
+      "score": 2,
+      "gameDate": "8/25/23",
+      "id": 333
     }
   ]
 }

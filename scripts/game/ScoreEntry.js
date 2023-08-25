@@ -34,10 +34,8 @@ export const ScoreEntryComponent = () => {
     const theWinner = calculateWinner();
     let finalHtml = "";
     finalHtml += `<div class="endOfGame">
-                        <h2>Game Over</h2>
-                        <h3>🍻Congrats to the winner!🍻</h3>
-                        <h3>${theWinner} won!<h/3>
-                        <h2><h/2
+                        <h2>🍻${theWinner}🍻</h2>
+                        <h3></h3>
                         <button class="startOver" role="button" id="startNewGame">Start New Game</button>
                         </div>
                       `;
@@ -56,13 +54,16 @@ const calculateWinner = () => {
   const teamThreeScore = teamScores.get("teamThree");
 
   if (teamOneScore > teamTwoScore && teamOneScore > teamThreeScore) {
-    return currentTeamsState().get("teamOne");
+    const teamOneMessage = currentTeamsState().get("teamOne");
+    return `${teamOneMessage} are the winners`;
   } else if (teamTwoScore > teamOneScore && teamTwoScore > teamThreeScore) {
-    return currentTeamsState().get("teamTwo");
+    const teamTwoMessage = currentTeamsState().get("teamTwo");
+    return `${teamTwoMessage} are the winners`;
   } else if (teamThreeScore > teamOneScore && teamThreeScore > teamTwoScore) {
-    return currentTeamsState().get("teamThree");
+    const teamThreeMessage = currentTeamsState().get("teamThree");
+    return `${teamThreeMessage} are the winners`;
   } else {
-    return "Looks like there is a tie!";
+    return "It's a tie!";
   }
 };
 
