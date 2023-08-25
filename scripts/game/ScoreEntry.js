@@ -31,10 +31,13 @@ export const ScoreEntryComponent = () => {
          <button class="btn btn--info" id="saveRound">Save Round Scores</button>
         `;
   if (roundCount > 3) {
+    const theWinner = calculateWinner();
     let finalHtml = "";
     finalHtml += `<div class="endOfGame">
-                        <h2>🍻Game Over🍻</h2>
+                        <h2>Game Over</h2>
                         <h3>🍻Congrats to the winner!🍻</h3>
+                        <h3>${theWinner} won!<h/3>
+                        <h2><h/2
                         <button class="startOver" role="button" id="startNewGame">Start New Game</button>
                         </div>
                       `;
@@ -44,6 +47,25 @@ export const ScoreEntryComponent = () => {
   roundCount++;
   return html;
 };
+
+const calculateWinner = () => {
+  const teamScores = currentScoresState();
+
+  const teamOneScore = teamScores.get("teamOne");
+  const teamTwoScore = teamScores.get("teamTwo");
+  const teamThreeScore = teamScores.get("teamThree");
+
+  if (teamOneScore > teamTwoScore && teamOneScore > teamThreeScore) {
+    return currentTeamsState().get("teamOne");
+  } else if (teamTwoScore > teamOneScore && teamTwoScore > teamThreeScore) {
+    return currentTeamsState().get("teamTwo");
+  } else if (teamThreeScore > teamOneScore && teamThreeScore > teamTwoScore) {
+    return currentTeamsState().get("teamThree");
+  } else {
+    return "Looks like there is a tie!";
+  }
+};
+
 const handleStartNewGameClick = (clickEvent) => {
   if (clickEvent.target.id === "startNewGame") {
     setTeamOne("");
